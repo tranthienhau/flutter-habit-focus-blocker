@@ -1,0 +1,79 @@
+{
+  "title": "Anchor - Habit & Focus",
+  "slug": "anchor-habits",
+  "domain": "productivity",
+  "style": "bright",
+  "allow3D": false,
+  "features": [
+    "Daily habits with streaks and progress tracking",
+    "App blocking and limits via Apple Screen Time (FamilyControls, ManagedSettings, DeviceActivity)",
+    "Focus timer and stopwatch for productivity sessions",
+    "Custom shield screen when opening a blocked app",
+    "User authentication (Apple, Google, email)",
+    "Subscriptions and paywall",
+    "Insights: focus hours, screen time saved, habit completion"
+  ],
+  "screenCount": 18,
+  "sharedComponents": {
+    "bottomTabBar": {
+      "tabs": ["Today", "Focus", "Blocks", "Insights", "Profile"],
+      "icons": ["check-circle", "timer", "shield", "bar-chart", "user"],
+      "note": "Flat white bar, hairline top border. Active tab: aubergine #4A154B icon + label with small gold #ECB22E dot above icon. Inactive: #8F7D90."
+    },
+    "statusBar": "iOS status bar 9:41, safe area top 59px",
+    "controls": "Primary button: pill, #4A154B fill, white Lato 600 label, pressed #3F1240, disabled #E6DEE6 with #8F7D90 label. Secondary: pill, white fill, 1.5px #4A154B border. Input: 12px radius, #EADCEA border, focus 2px #4A154B ring, error #DC2626. Card: white, 20px radius, soft shadow. Chip: pill, #F3EAF3 fill, #4A154B text; selected = #4A154B fill white text."
+  },
+  "screens": [
+    {"name":"welcome","group":"onboarding","nav":"none","states":["default"],"purpose":"First launch brand intro","content":"Full-bleed real photo of a calm morning desk with notebook and coffee, phone face down; gradient overlay aubergine to gold at bottom; headline 'Build habits. Guard your focus.' in Gloock; subtitle; primary 'Get started' + 'I already have an account' link; page dots 1/3"},
+    {"name":"goals","group":"onboarding","nav":"none","states":["default"],"purpose":"Pick what to improve","content":"Title 'What do you want to change?'; 2-column selectable cards with small real photos: Less doomscrolling, Deep work, Morning routine, Better sleep, Exercise, Reading; 3 selected; progress bar step 2 of 4; Continue button"},
+    {"name":"screen-time-permission","group":"onboarding","nav":"none","states":["default"],"purpose":"Explain and request Screen Time access","content":"Real photo of hand placing phone into a wooden box; title 'Allow Screen Time access'; 3 bullets (Block distracting apps, Set daily limits, Your data stays on device - Apple never shares app names); primary 'Continue with Screen Time'; note 'iOS will ask for your Face ID'; step 3 of 4"},
+    {"name":"sign-in","group":"onboarding","nav":"none","states":["default"],"purpose":"Create account","content":"Small app mark top; title 'Save your streaks'; Continue with Apple (black pill), Continue with Google (white pill), email input + Continue; terms caption"},
+    {"name":"paywall","group":"onboarding","nav":"none","states":["default"],"purpose":"Subscribe to Anchor Pro","content":"Close X; gradient hero card aubergine to gold with 'Anchor Pro'; features list (Unlimited habits, Unlimited block schedules, Strict mode, Advanced insights, Widgets); plan cards Yearly $39.99 (Save 58%, 7-day free trial, selected) / Monthly $7.99; primary 'Start free trial'; Restore purchases, Terms, Privacy"},
+    {"name":"today","group":"core","nav":"Today","states":["default","empty"],"purpose":"Daily habit checklist","content":"Greeting 'Good morning, Maya' + date Tue, Oct 21 + real photo avatar; focal hero card gradient: flame icon + '23 day streak', progress ring 4/6 done today; week strip M-S with completed dots; habit list rows with icon, name, streak, check circle: Meditate 10 min (done), Read 20 pages (done), No social before 10am (done), Drink 2L water 1.2/2L partial, Workout 30 min (open), Journal (open); floating + button gold"},
+    {"name":"today-empty","group":"core","nav":"Today","states":["empty"],"purpose":"First run, no habits yet","content":"Greeting 'Good morning, Maya'; real photo of an empty open notebook and pen on a wooden table; title 'Your first habit starts here'; caption; primary 'Add a habit'; suggestion chips: Meditate, Read, Walk, No phone in bed"},
+    {"name":"habit-detail","group":"detail","nav":"Today","states":["default"],"purpose":"Streak and history for one habit","content":"Back; title 'Read 20 pages'; focal big '23' current streak in Gloock, best streak 41; monthly calendar heatmap October with aubergine filled days; stats row Completion 87%, Total 164, This week 6/7; reminder 8:30 PM; notes; Edit / Archive"},
+    {"name":"add-habit","group":"detail","nav":"none","states":["default"],"purpose":"Create a habit","content":"Bottom sheet modal; name input 'Morning walk'; icon + color picker; frequency segmented Daily / Weekdays / Custom; goal stepper 30 min; time of day chips Morning/Afternoon/Evening; reminder toggle 7:00 AM; primary 'Create habit'"},
+    {"name":"focus","group":"core","nav":"Focus","states":["default"],"purpose":"Start a focus session","content":"Segmented control Timer / Stopwatch; focal large circular timer ring '25:00' in gold progress track; session label chip 'Deep work'; duration chips 15 / 25 / 50 / 90; toggle 'Block distracting apps during session' on, with 'Social, Games, 4 apps'; primary 'Start focus'; today summary '2h 10m focused today'"},
+    {"name":"focus-live","group":"core","nav":"none","states":["default"],"purpose":"Session in progress","content":"Deep aubergine full background; big countdown '18:42' white Gloock; ring progress gold; 'Deep work' label; shield badge 'Instagram, TikTok, X, YouTube blocked'; Pause and End buttons; ambient sound chip 'Rain'"},
+    {"name":"focus-complete","group":"detail","nav":"none","states":["default"],"purpose":"Session summary","content":"Real photo of sunlit desk plant; 'Session complete'; focal '50 min' focused; stats: 3 blocked attempts, 12 day focus streak; rate your focus 5 emoji-free icons; primary 'Done', secondary 'Take a 5 min break'"},
+    {"name":"blocks","group":"core","nav":"Blocks","states":["default","empty"],"purpose":"Manage app block schedules and limits","content":"Title 'Blocks'; focal card 'Screen time today 1h 52m' vs goal 2h, saved 48 min vs last week; Schedules list cards with toggles: Morning Focus 6:00-10:00 Weekdays (active now, gold badge), Work Hours 9-17, Wind Down 22:00-7:00; App limits list: Instagram 30m/day (22m used bar), TikTok 15m, YouTube 45m; Strict mode toggle; + New block"},
+    {"name":"blocks-empty","group":"core","nav":"Blocks","states":["empty"],"purpose":"No blocks yet","content":"Real photo of a phone face down on a desk next to a notebook; 'Take back your attention'; caption; primary 'Create your first block'; templates chips: Morning focus, Work hours, Bedtime"},
+    {"name":"block-editor","group":"detail","nav":"none","states":["default"],"purpose":"Create or edit a block schedule","content":"Header 'Morning Focus' with Save; Apps section: 'Choose apps' row showing category chips Social (selected), Entertainment, Games, plus app tokens Instagram, TikTok, X; schedule: start 6:00 AM end 10:00 AM, days M T W T F selected; mode segmented Block / Limit; Strict mode toggle 'cannot be turned off until it ends'; break allowance 'Allow 1 x 5 min unlock'"},
+    {"name":"shield","group":"detail","nav":"none","states":["default"],"purpose":"Shield shown when opening a blocked app","content":"Full screen soft aubergine gradient; app mark; 'Instagram is blocked'; 'Morning Focus ends at 10:00 AM'; quote card 'You will never change your life until you change something you do daily.'; primary white 'Close app'; text button 'Unlock for 5 min (1 left)'"},
+    {"name":"insights","group":"core","nav":"Insights","states":["default"],"purpose":"Weekly progress","content":"Range segmented Week / Month; focal stat 'Focus 14h 30m' +22%; bar chart focus hours per day in aubergine with gold today; screen time saved line chart; habit completion 82% ring; top habits list; most blocked apps list with attempt counts"},
+    {"name":"profile","group":"settings","nav":"Profile","states":["default"],"purpose":"Account, subscription, settings","content":"Real photo avatar Maya Chen, 'Member since Aug 2026'; Anchor Pro card gold badge 'Yearly, renews Aug 12, 2027'; settings groups: Reminders, Screen Time permission (Granted), Widgets, Apple Health sync, Appearance, Export data, Help, Sign out"}
+  ],
+  "designSystem": {
+    "variant": "P58",
+    "theme": "light",
+    "frame": "393x852, top inset 59px, bottom inset 34px",
+    "color": {
+      "background": "#FCF4FC",
+      "surface": "#FFFFFF",
+      "surfaceAlt": "#F7EEF7",
+      "accent": "#4A154B",
+      "accentFill": "#4A154B",
+      "accentTint": "#E6DEE6",
+      "accentPressed": "#3F1240",
+      "support": "#ECB22E",
+      "text": {"primary": "#1E0C1F", "secondary": "#5E4A5F", "tertiary": "#8F7D90"},
+      "border": "#EADCEA",
+      "success": "#16A34A", "warning": "#D97706", "danger": "#DC2626"
+    },
+    "type": {
+      "fontFamily": "Lato",
+      "displayFamily": "Gloock",
+      "numeralFamily": "Lato (tabular)",
+      "display": "32 / 700 / -0.02em",
+      "title": "20 / 600",
+      "body": "16 / 400",
+      "label": "14 / 500",
+      "caption": "13 / 500"
+    },
+    "radius": {"card": 20, "control": 14, "input": 12, "pill": 999},
+    "spacing": "8pt scale, screen edge 20px",
+    "elevation": "card = 0 1px 2px rgba(30,12,31,.04) + 0 8px 24px rgba(30,12,31,.06)",
+    "icons": "rounded outline, 24px, 1.75 stroke, one set",
+    "a11y": "white labels on #4A154B only; gold carries dark #1E0C1F labels; taps >= 44pt"
+  }
+}

@@ -1,0 +1,133 @@
+[
+  {
+    "name": "welcome-hero",
+    "file": "assets/images/welcome-hero.jpg",
+    "role": "hero",
+    "screens": [
+      "01-welcome"
+    ],
+    "source": "stitch",
+    "prompt": "Calm morning desk with notebook, face-down phone and warm coffee"
+  },
+  {
+    "name": "goal-less-doomscrolling",
+    "file": "assets/images/goal-less-doomscrolling.jpg",
+    "role": "thumbnail",
+    "screens": [
+      "02-goals"
+    ],
+    "source": "stitch",
+    "prompt": "Hand placing smartphone screen-down on bed"
+  },
+  {
+    "name": "goal-deep-work",
+    "file": "assets/images/goal-deep-work.jpg",
+    "role": "thumbnail",
+    "screens": [
+      "02-goals"
+    ],
+    "source": "stitch",
+    "prompt": "Person working focused at desk with laptop in morning light"
+  },
+  {
+    "name": "goal-morning-routine",
+    "file": "assets/images/goal-morning-routine.jpg",
+    "role": "thumbnail",
+    "screens": [
+      "02-goals"
+    ],
+    "source": "stitch",
+    "prompt": "Calm morning sunrise over kitchen table with ceramic mug"
+  },
+  {
+    "name": "goal-better-sleep",
+    "file": "assets/images/goal-better-sleep.jpg",
+    "role": "thumbnail",
+    "screens": [
+      "02-goals"
+    ],
+    "source": "stitch",
+    "prompt": "Tidy serene bedroom with warm glowing bedside lamp"
+  },
+  {
+    "name": "goal-exercise",
+    "file": "assets/images/goal-exercise.jpg",
+    "role": "thumbnail",
+    "screens": [
+      "02-goals"
+    ],
+    "source": "stitch",
+    "prompt": "Close-up of running shoes on park path with sunlight"
+  },
+  {
+    "name": "goal-reading",
+    "file": "assets/images/goal-reading.jpg",
+    "role": "thumbnail",
+    "screens": [
+      "02-goals"
+    ],
+    "source": "stitch",
+    "prompt": "Hardcover book and eyeglasses resting on wooden desk"
+  },
+  {
+    "name": "phone-in-box",
+    "file": "assets/images/phone-in-box.jpg",
+    "role": "cover",
+    "screens": [
+      "03-screen-time-permission"
+    ],
+    "source": "stitch",
+    "prompt": "Hand placing smartphone into a handcrafted wooden box beside an open journal on a warm wooden desk"
+  },
+  {
+    "name": "avatar-maya",
+    "file": "assets/images/avatar-maya.jpg",
+    "role": "avatar",
+    "screens": [
+      "06-today"
+    ],
+    "source": "stitch",
+    "prompt": "Maya Chen profile avatar"
+  },
+  {
+    "name": "avatar-maya-alt",
+    "file": "assets/images/avatar-maya-alt.jpg",
+    "role": "avatar",
+    "screens": [
+      "07-today-empty",
+      "18-profile"
+    ],
+    "source": "stitch",
+    "prompt": "Maya Chen"
+  },
+  {
+    "name": "empty-notebook",
+    "file": "assets/images/empty-notebook.jpg",
+    "role": "illustration",
+    "screens": [
+      "07-today-empty"
+    ],
+    "source": "stitch",
+    "prompt": "Open notebook and brass pen on natural wood desk with soft morning daylight"
+  },
+  {
+    "name": "sunlit-desk-plant",
+    "file": "assets/images/sunlit-desk-plant.jpg",
+    "role": "cover",
+    "screens": [
+      "12-focus-complete"
+    ],
+    "source": "stitch",
+    "prompt": "Sunlit wooden desk with a closed minimalist laptop, thriving potted green plant, and ceramic coffee cup"
+  },
+  {
+    "name": "phone-face-down-desk",
+    "file": "assets/images/phone-face-down-desk.jpg",
+    "role": "illustration",
+    "screens": [
+      "14-blocks-empty"
+    ],
+    "source": "stitch",
+    "prompt": "Mindful desk setup with smartphone placed face down, journal, pen, and hot cup of tea"
+  }
+]

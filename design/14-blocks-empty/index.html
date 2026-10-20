@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>Blocks - Anchor</title>
+<!-- Google Fonts: Gloock & Lato -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Gloock&amp;family=Lato:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-tertiary-container": "#8c995d",
+            "error": "#ba1a1a",
+            "tertiary": "#141a00",
+            "error-container": "#ffdad6",
+            "surface-container-low": "#fcf1f6",
+            "on-primary-container": "#be7db9",
+            "text-secondary": "#5E4A5F",
+            "success": "#16A34A",
+            "tertiary-fixed-dim": "#bfcd8b",
+            "surface-alt": "#F7EEF7",
+            "background": "#FCF4FC",
+            "accent-tint": "#E6DEE6",
+            "text-tertiary": "#8F7D90",
+            "outline-variant": "#d2c2cd",
+            "accent-pressed": "#3F1240",
+            "inverse-surface": "#352f33",
+            "surface-dim": "#e2d7dd",
+            "on-surface-variant": "#4f434c",
+            "on-background": "#1f1a1e",
+            "on-tertiary-fixed-variant": "#404b17",
+            "surface-container-highest": "#eae0e5",
+            "surface-container-lowest": "#ffffff",
+            "on-primary-fixed": "#370139",
+            "surface-variant": "#eae0e5",
+            "primary-fixed-dim": "#f6afef",
+            "primary-fixed": "#ffd6f8",
+            "surface-container": "#f6ebf0",
+            "danger": "#DC2626",
+            "primary-container": "#4a154b",
+            "on-error-container": "#93000a",
+            "on-secondary-fixed-variant": "#5d4200",
+            "tertiary-fixed": "#dbe9a5",
+            "tertiary-container": "#263000",
+            "on-secondary-container": "#705100",
+            "surface-container-high": "#f0e5eb",
+            "surface": "#FFFFFF",
+            "secondary-fixed-dim": "#f8bd39",
+            "secondary": "#7b5900",
+            "on-error": "#ffffff",
+            "border": "#EADCEA",
+            "on-secondary": "#ffffff",
+            "text-primary": "#1E0C1F",
+            "outline": "#80737d",
+            "secondary-fixed": "#ffdea4",
+            "on-primary": "#ffffff",
+            "surface-tint": "#844981",
+            "primary": "#300033",
+            "inverse-on-surface": "#f9eef3",
+            "on-secondary-fixed": "#261900",
+            "secondary-container": "#ffc23e",
+            "surface-bright": "#fff7fa",
+            "on-surface": "#1f1a1e",
+            "inverse-primary": "#f6afef",
+            "warning": "#D97706",
+            "on-tertiary": "#ffffff",
+            "on-primary-fixed-variant": "#693168",
+            "on-tertiary-fixed": "#171e00"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xs": "4px",
+            "space-md": "12px",
+            "space-lg": "16px",
+            "space-sm": "8px",
+            "space-2xl": "32px",
+            "gutter": "16px",
+            "space-xl": "24px",
+            "margin": "20px"
+          },
+          "fontFamily": {
+            "caption": ["Lato"],
+            "body": ["Lato"],
+            "title": ["Lato"],
+            "label": ["Lato"],
+            "display": ["Gloock"]
+          },
+          "fontSize": {
+            "caption": [
+              "13px",
+              {
+                "lineHeight": "16px",
+                "fontWeight": "500"
+              }
+            ],
+            "body": [
+              "16px",
+              {
+                "lineHeight": "22px",
+                "fontWeight": "400"
+              }
+            ],
+            "title": [
+              "20px",
+              {
+                "lineHeight": "26px",
+                "fontWeight": "600"
+              }
+            ],
+            "label": [
+              "14px",
+              {
+                "lineHeight": "18px",
+                "fontWeight": "500"
+              }
+            ],
+            "display": [
+              "32px",
+              {
+                "lineHeight": "38px",
+                "letterSpacing": "-0.02em",
+                "fontWeight": "700"
+              }
+            ]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+      font-size: 24px;
+      line-height: 1;
+      display: inline-block;
+    }
+    .card-shadow {
+      box-shadow: 0 1px 2px rgba(30, 12, 31, 0.04), 0 8px 24px rgba(30, 12, 31, 0.06);
+    }
+    /* Hide scrollbar for clean horizontal scrolling */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="bg-background text-text-primary antialiased min-h-screen flex justify-center items-center selection:bg-secondary-container selection:text-text-primary">
+<!-- iPhone Frame Mockup (393px width constraint) -->
+<main class="w-full max-w-[393px] h-[852px] bg-background relative flex flex-col overflow-hidden shadow-2xl rounded-[48px] border-[6px] border-surface">
+<!-- iOS Status Bar -->
+<header class="w-full pt-3 px-7 flex justify-between items-center text-text-primary z-30 select-none">
+<span class="font-body text-[15px] font-semibold tracking-tight">9:41</span>
+<div class="flex items-center space-x-2">
+<span class="material-symbols-outlined !text-[17px] text-text-primary" data-icon="signal_cellular_alt">signal_cellular_alt</span>
+<span class="material-symbols-outlined !text-[17px] text-text-primary" data-icon="wifi">wifi</span>
+<span class="material-symbols-outlined !text-[20px] text-text-primary" data-icon="battery_full">battery_full</span>
+</div>
+</header>
+<!-- Top Navigation Bar (Shared Component: TopAppBar) -->
+<section class="flex justify-between items-center w-full px-5 h-14 z-20 bg-background">
+<h1 class="font-display text-[28px] leading-tight font-bold text-text-primary tracking-tight">Blocks</h1>
+<button aria-label="Add new block" class="w-9 h-9 rounded-full bg-surface card-shadow border border-border flex items-center justify-center text-primary-container hover:bg-surface-container transition-colors active:scale-95 duration-150" type="button">
+<span class="material-symbols-outlined !text-[20px]" data-icon="add">add</span>
+</button>
+</section>
+<!-- Scrollable Content Canvas -->
+<div class="flex-1 overflow-y-auto no-scrollbar px-5 pb-28 pt-1 flex flex-col justify-between">
+<!-- Hero Empty State Section -->
+<section class="flex flex-col items-center">
+<!-- Hero Photographic Anchor -->
+<div class="w-full aspect-[4/2.9] rounded-[20px] overflow-hidden card-shadow border border-border relative bg-surface">
+<img alt="Mindful desk setup with smartphone placed face down, journal, pen, and hot cup of tea" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA19la8UdyB_r3xs6Krsm5CYN0EZ8x6eda8uCystuZ3ZASW8sFRvrD82RdXvdeXfVt3E0IbQpCXEcoLY9gtcoc_nsWJInJ585LhF2pnKrwH10vu2sAATODT639-YmIxb8S8iyv014Yj7KGpFALdOG18XYprKMHkjhRG-PityRTfKQSjm4ETm2ul95XU-f70_wZkKiX1x9BquX3gyeOuwDRpicHGLeRteEELlhUrW-DOEbfJygS5VplQAd7elPlNwow8j20Ida0RYxg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary-container/15 via-transparent to-transparent pointer-events-none"></div>
+</div>
+<!-- Hero Copy -->
+<div class="text-center mt-5 mb-5 px-1">
+<h2 class="font-display text-[26px] leading-[32px] text-text-primary tracking-tight">
+            Take back your attention
+          </h2>
+<p class="font-body text-caption text-text-secondary mt-2 max-w-[280px] mx-auto leading-relaxed">
+            Create a schedule to block distracting apps when it matters most.
+          </p>
+</div>
+<!-- Primary Action Button -->
+<button class="w-full h-[52px] rounded-full bg-primary-container hover:bg-accent-pressed text-surface font-title text-label font-semibold flex items-center justify-center space-x-2 shadow-sm transition-all active:scale-[0.98] duration-150">
+<span class="material-symbols-outlined !text-[20px]" data-icon="add_circle">add_circle</span>
+<span>Create your first block</span>
+</button>
+</section>
+<!-- Templates Section -->
+<section class="mt-6 mb-2">
+<div class="flex items-center justify-between mb-3 px-1">
+<span class="font-label text-caption text-text-tertiary font-semibold uppercase tracking-wider">
+            Start from a template
+          </span>
+<span class="font-label text-[11px] text-text-secondary font-medium">3 presets</span>
+</div>
+<!-- 3 Template Cards Grid -->
+<div class="grid grid-cols-3 gap-2.5">
+<!-- Template Card 1: Morning focus -->
+<article class="bg-surface rounded-[18px] p-3 flex flex-col items-center text-center card-shadow border border-border hover:border-outline-variant transition-all cursor-pointer active:scale-95 duration-150">
+<div class="w-10 h-10 rounded-full bg-surface-alt flex items-center justify-center text-primary-container mb-2">
+<span class="material-symbols-outlined !text-[21px]" data-icon="wb_sunny">wb_sunny</span>
+</div>
+<h3 class="font-label text-caption font-semibold text-text-primary leading-tight line-clamp-1">Morning focus</h3>
+<span class="font-caption text-[11px] text-text-tertiary mt-1 bg-surface-container px-2 py-0.5 rounded-full">7 - 10 AM</span>
+</article>
+<!-- Template Card 2: Work hours -->
+<article class="bg-surface rounded-[18px] p-3 flex flex-col items-center text-center card-shadow border border-border hover:border-outline-variant transition-all cursor-pointer active:scale-95 duration-150">
+<div class="w-10 h-10 rounded-full bg-surface-alt flex items-center justify-center text-primary-container mb-2">
+<span class="material-symbols-outlined !text-[21px]" data-icon="work">work</span>
+</div>
+<h3 class="font-label text-caption font-semibold text-text-primary leading-tight line-clamp-1">Work hours</h3>
+<span class="font-caption text-[11px] text-text-tertiary mt-1 bg-surface-container px-2 py-0.5 rounded-full">9 - 5 PM</span>
+</article>
+<!-- Template Card 3: Bedtime -->
+<article class="bg-surface rounded-[18px] p-3 flex flex-col items-center text-center card-shadow border border-border hover:border-outline-variant transition-all cursor-pointer active:scale-95 duration-150">
+<div class="w-10 h-10 rounded-full bg-surface-alt flex items-center justify-center text-primary-container mb-2">
+<span class="material-symbols-outlined !text-[21px]" data-icon="bedtime">bedtime</span>
+</div>
+<h3 class="font-label text-caption font-semibold text-text-primary leading-tight line-clamp-1">Bedtime</h3>
+<span class="font-caption text-[11px] text-text-tertiary mt-1 bg-surface-container px-2 py-0.5 rounded-full">10 PM - 7 AM</span>
+</article>
+</div>
+</section>
+</div>
+<!-- Bottom Navigation Bar (Shared Component: BottomNavBar) -->
+<!-- Matches exact JSON specs: "Today", "Focus", "Blocks", "Insights", "Profile" with "Blocks" actively highlighted -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-8 pt-2 shadow-[0_-1px_3px_rgba(30,12,31,0.04)] bg-surface dark:bg-inverse-surface border-t border-border">
+<!-- 1: Today -->
+<a class="flex flex-col items-center justify-center text-text-tertiary dark:text-outline hover:text-primary dark:hover:text-inverse-primary transition-colors active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined !text-[22px]" data-icon="check_circle">check_circle</span>
+<span class="font-caption text-caption mt-0.5">Today</span>
+</a>
+<!-- 2: Focus -->
+<a class="flex flex-col items-center justify-center text-text-tertiary dark:text-outline hover:text-primary dark:hover:text-inverse-primary transition-colors active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined !text-[22px]" data-icon="timer">timer</span>
+<span class="font-caption text-caption mt-0.5">Focus</span>
+</a>
+<!-- 3: Blocks (Active Lock) -->
+<a class="flex flex-col items-center justify-center text-primary-container dark:text-inverse-primary font-semibold relative after:content-[''] after:w-1 after:h-1 after:bg-secondary-container after:rounded-full after:mt-1 active:scale-95 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined !text-[22px]" data-icon="shield">shield</span>
+<span class="font-caption text-caption mt-0.5">Blocks</span>
+</a>
+<!-- 4: Insights -->
+<a class="flex flex-col items-center justify-center text-text-tertiary dark:text-outline hover:text-primary dark:hover:text-inverse-primary transition-colors active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined !text-[22px]" data-icon="bar_chart">bar_chart</span>
+<span class="font-caption text-caption mt-0.5">Insights</span>
+</a>
+<!-- 5: Profile -->
+<a class="flex flex-col items-center justify-center text-text-tertiary dark:text-outline hover:text-primary dark:hover:text-inverse-primary transition-colors active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined !text-[22px]" data-icon="person">person</span>
+<span class="font-caption text-caption mt-0.5">Profile</span>
+</a>
+</nav>
+<!-- iOS Home Indicator -->
+<div class="absolute bottom-1.5 left-1/2 -translate-x-1/2 w-32 h-1 bg-text-primary/20 rounded-full z-50 pointer-events-none"></div>
+</main>
+</body></html>

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Anchor — Screen Time Permission</title>
+<!-- Google Fonts: Gloock & Lato -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Gloock&amp;family=Lato:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "inverse-on-surface": "#f9eef3",
+            "tertiary": "#141a00",
+            "on-tertiary-fixed": "#171e00",
+            "on-background": "#1f1a1e",
+            "on-primary": "#ffffff",
+            "surface-container-low": "#fcf1f6",
+            "surface-container-high": "#f0e5eb",
+            "primary-container": "#4a154b",
+            "accent-tint": "#E6DEE6",
+            "accent-pressed": "#3F1240",
+            "on-primary-fixed": "#370139",
+            "surface": "#FFFFFF",
+            "on-tertiary-container": "#8c995d",
+            "primary-fixed-dim": "#f6afef",
+            "text-secondary": "#5E4A5F",
+            "text-tertiary": "#8F7D90",
+            "on-secondary-container": "#705100",
+            "border": "#EADCEA",
+            "surface-dim": "#e2d7dd",
+            "inverse-primary": "#f6afef",
+            "surface-container": "#f6ebf0",
+            "tertiary-fixed-dim": "#bfcd8b",
+            "success": "#16A34A",
+            "tertiary-container": "#263000",
+            "surface-tint": "#844981",
+            "outline": "#80737d",
+            "inverse-surface": "#352f33",
+            "surface-alt": "#F7EEF7",
+            "secondary-container": "#ffc23e",
+            "error-container": "#ffdad6",
+            "tertiary-fixed": "#dbe9a5",
+            "secondary-fixed": "#ffdea4",
+            "primary-fixed": "#ffd6f8",
+            "surface-variant": "#eae0e5",
+            "danger": "#DC2626",
+            "background": "#FCF4FC",
+            "surface-bright": "#fff7fa",
+            "on-primary-fixed-variant": "#693168",
+            "on-secondary-fixed": "#261900",
+            "on-primary-container": "#be7db9",
+            "primary": "#300033",
+            "on-surface-variant": "#4f434c",
+            "on-error": "#ffffff",
+            "surface-container-lowest": "#ffffff",
+            "on-error-container": "#93000a",
+            "on-secondary-fixed-variant": "#5d4200",
+            "on-surface": "#1f1a1e",
+            "outline-variant": "#d2c2cd",
+            "on-tertiary": "#ffffff",
+            "on-secondary": "#ffffff",
+            "secondary-fixed-dim": "#f8bd39",
+            "error": "#ba1a1a",
+            "text-primary": "#1E0C1F",
+            "warning": "#D97706",
+            "surface-container-highest": "#eae0e5",
+            "secondary": "#7b5900",
+            "on-tertiary-fixed-variant": "#404b17"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "2xl": "1.25rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin": "20px",
+            "space-md": "12px",
+            "space-lg": "16px",
+            "space-sm": "8px",
+            "space-xs": "4px",
+            "space-xl": "24px",
+            "space-2xl": "32px",
+            "gutter": "16px"
+          },
+          "fontFamily": {
+            "display": ["Gloock", "serif"],
+            "title": ["Lato", "sans-serif"],
+            "label": ["Lato", "sans-serif"],
+            "body": ["Lato", "sans-serif"],
+            "caption": ["Lato", "sans-serif"]
+          },
+          "fontSize": {
+            "display": [
+              "30px",
+              {
+                "lineHeight": "36px",
+                "letterSpacing": "-0.02em",
+                "fontWeight": "700"
+              }
+            ],
+            "title": [
+              "20px",
+              {
+                "lineHeight": "26px",
+                "fontWeight": "600"
+              }
+            ],
+            "label": [
+              "14px",
+              {
+                "lineHeight": "18px",
+                "fontWeight": "500"
+              }
+            ],
+            "body": [
+              "16px",
+              {
+                "lineHeight": "22px",
+                "fontWeight": "400"
+              }
+            ],
+            "caption": [
+              "13px",
+              {
+                "lineHeight": "16px",
+                "fontWeight": "500"
+              }
+            ]
+          },
+          "boxShadow": {
+            "card": "0 1px 2px rgba(30, 12, 31, 0.04), 0 8px 24px rgba(30, 12, 31, 0.06)",
+            "subtle": "0 2px 8px rgba(74, 21, 75, 0.08)"
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    /* iOS smooth tap experience */
+    * {
+      -webkit-tap-highlight-color: transparent;
+      user-select: none;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+  </style>
+</head>
+<body class="bg-background text-text-primary min-h-full flex justify-center items-start antialiased selection:bg-accent-tint">
+<!-- iPhone 393x852 Viewport Container -->
+<main class="w-full max-w-[393px] min-h-screen bg-background flex flex-col justify-between relative overflow-x-hidden shadow-2xl">
+<!-- Top Area: iOS Status Bar Simulation + Shared TopAppBar -->
+<header class="w-full pt-2 flex flex-col z-20">
+<!-- Simulated iOS Status Bar -->
+<div class="h-11 px-7 flex items-center justify-between text-text-primary">
+<span class="font-title text-[15px] font-semibold tracking-tight">9:41</span>
+<div class="flex items-center space-x-2 text-text-primary">
+<span class="material-symbols-outlined text-[17px]">signal_cellular_alt</span>
+<span class="material-symbols-outlined text-[17px]">wifi</span>
+<span class="material-symbols-outlined text-[20px]">battery_full</span>
+</div>
+</div>
+<!-- TopAppBar Component (from Shared Components JSON & Design System) -->
+<nav class="bg-background flex justify-between items-center w-full px-margin h-14">
+<!-- Leading Action: Back Button -->
+<button aria-label="Go back" class="w-9 h-9 rounded-full flex items-center justify-center text-primary active:scale-95 transition-transform duration-150 hover:opacity-80" type="button">
+<span class="material-symbols-outlined text-[20px]">arrow_back_ios_new</span>
+</button>
+<!-- Centered Step Indicator -->
+<div class="flex flex-col items-center">
+<span class="font-label text-[12px] uppercase tracking-wider font-semibold text-text-tertiary">Step 3 of 4</span>
+</div>
+<!-- Trailing Action: Skip -->
+<button class="font-label text-label font-medium text-text-tertiary active:scale-95 transition-transform duration-150 hover:opacity-80 px-1 py-1" type="button">
+          Skip
+        </button>
+</nav>
+<!-- Progress Track (75% filled for Step 3 of 4) -->
+<div class="w-full px-margin pt-1 pb-2">
+<div class="w-full h-1 bg-border rounded-full overflow-hidden">
+<div class="h-full bg-primary-container rounded-full w-3/4 transition-all duration-300"></div>
+</div>
+</div>
+</header>
+<!-- Scrollable Content Canvas -->
+<div class="flex-1 px-margin flex flex-col pt-2 pb-6">
+<!-- Hero Photograph Card -->
+<section class="w-full overflow-hidden rounded-2xl shadow-card bg-surface relative mb-6">
+<div class="w-full aspect-[16/10] overflow-hidden bg-surface-alt">
+<img alt="Hand placing smartphone into a handcrafted wooden box beside an open journal on a warm wooden desk" class="w-full h-full object-cover object-center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_RNlIR7ovJd2D20rtgOrGe74604ZcCUrnpoieq-A1G9tEm66hsKZGOhQNP1gGPIoUbQoFUBXXROf2Qbz9nwmA99oTXoWwCI_fIB_dIR0s1clJZrIiIfvFXNe6lRy76fzYAQQOjgw_TFAhpkTJ-v731ot_UOsFvr7eRT-FG-L7fEgw11vvikj9QhaFeEjB4UL6zZpd_FLyWDim1NHx0SQ-0boDnGWGOv8HhYSuMr1bLBt69NLizh5qSBUQAAxbVQerCWpYaJbzfIM"/>
+</div>
+</section>
+<!-- Headline & Subheadline -->
+<header class="mb-6 space-y-2 text-left">
+<h1 class="font-display text-display text-text-primary tracking-tight">
+          Allow Screen Time access
+        </h1>
+<p class="font-body text-body text-text-secondary leading-relaxed">
+          Anchor uses Apple's official Screen Time API to help you stay present and build intentional routines.
+        </p>
+</header>
+<!-- Feature / Value Proposition Bento Rows -->
+<section class="space-y-4 mb-4">
+<!-- Row 1: Block Distracting Apps -->
+<div class="flex items-start space-x-3.5 p-3 rounded-xl bg-surface/80 border border-border/60 shadow-[0_1px_3px_rgba(30,12,31,0.02)]">
+<div class="w-10 h-10 rounded-full bg-accent-tint/60 flex items-center justify-center shrink-0 mt-0.5 text-primary-container">
+<span class="material-symbols-outlined text-[20px]">shield</span>
+</div>
+<div class="flex-1 min-w-0">
+<h2 class="font-title text-[15px] font-semibold text-text-primary leading-snug">
+              Block distracting apps during focus
+            </h2>
+<p class="font-caption text-caption text-text-secondary mt-0.5 leading-normal">
+              Pre-selected feeds and social loops stay paused while your deep work sessions are running.
+            </p>
+</div>
+</div>
+<!-- Row 2: Set Daily Limits -->
+<div class="flex items-start space-x-3.5 p-3 rounded-xl bg-surface/80 border border-border/60 shadow-[0_1px_3px_rgba(30,12,31,0.02)]">
+<div class="w-10 h-10 rounded-full bg-accent-tint/60 flex items-center justify-center shrink-0 mt-0.5 text-primary-container">
+<span class="material-symbols-outlined text-[20px]">hourglass_empty</span>
+</div>
+<div class="flex-1 min-w-0">
+<h2 class="font-title text-[15px] font-semibold text-text-primary leading-snug">
+              Set daily limits for social and games
+            </h2>
+<p class="font-caption text-caption text-text-secondary mt-0.5 leading-normal">
+              Introduce gentle friction and mindfully capped time windows before endless scrolling begins.
+            </p>
+</div>
+</div>
+<!-- Row 3: Private by Design -->
+<div class="flex items-start space-x-3.5 p-3 rounded-xl bg-surface/80 border border-border/60 shadow-[0_1px_3px_rgba(30,12,31,0.02)]">
+<div class="w-10 h-10 rounded-full bg-accent-tint/60 flex items-center justify-center shrink-0 mt-0.5 text-primary-container">
+<span class="material-symbols-outlined text-[20px]">verified_user</span>
+</div>
+<div class="flex-1 min-w-0">
+<h2 class="font-title text-[15px] font-semibold text-text-primary leading-snug">
+              Private by design — strictly on-device
+            </h2>
+<p class="font-caption text-caption text-text-secondary mt-0.5 leading-normal">
+              App names, browsing history, and usage analytics never leave your device or reach our servers.
+            </p>
+</div>
+</div>
+</section>
+</div>
+<!-- Sticky / Docked Footer Actions -->
+<footer class="w-full px-margin pb-3 pt-2 bg-gradient-to-t from-background via-background to-transparent flex flex-col items-center">
+<!-- Privacy Confirmation Notice with Face ID icon hint -->
+<div class="flex items-center justify-center space-x-1.5 text-text-secondary mb-3">
+<span class="material-symbols-outlined text-[15px]">lock</span>
+<span class="font-caption text-[12px] font-medium tracking-tight">iOS will ask you to confirm with Face ID.</span>
+</div>
+<!-- Primary CTA: Aubergine Pill Button -->
+<button class="w-full h-14 bg-primary-container text-on-primary font-label text-body font-semibold rounded-full shadow-card active:scale-[0.98] transition-transform duration-150 flex items-center justify-center space-x-2 hover:opacity-95" type="button">
+<span>Continue with Screen Time</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+<!-- Secondary CTA: Text Action -->
+<button class="mt-2.5 py-1.5 text-text-secondary font-label text-label font-medium active:scale-95 transition-transform duration-150 hover:text-text-primary" type="button">
+        Not now
+      </button>
+<!-- iOS Home Indicator Clearance (34px safe area) -->
+<div class="w-full h-8 flex items-end justify-center pb-1">
+<div class="w-32 h-1 bg-text-primary/25 rounded-full"></div>
+</div>
+</footer>
+</main>
+</body></html>

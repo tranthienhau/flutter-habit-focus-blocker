@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Anchor - New Habit Modal</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Gloock&amp;family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-container-high": "#f0e5eb",
+            "success": "#16A34A",
+            "danger": "#DC2626",
+            "tertiary": "#141a00",
+            "warning": "#D97706",
+            "on-primary-fixed": "#370139",
+            "secondary-container": "#ffc23e",
+            "surface-alt": "#F7EEF7",
+            "primary-container": "#4a154b",
+            "on-surface": "#1f1a1e",
+            "text-tertiary": "#8F7D90",
+            "on-secondary-fixed": "#261900",
+            "primary-fixed": "#ffd6f8",
+            "surface-container-lowest": "#ffffff",
+            "tertiary-container": "#263000",
+            "surface-variant": "#eae0e5",
+            "surface": "#FFFFFF",
+            "on-error": "#ffffff",
+            "secondary-fixed": "#ffdea4",
+            "on-primary-fixed-variant": "#693168",
+            "on-surface-variant": "#4f434c",
+            "tertiary-fixed-dim": "#bfcd8b",
+            "surface-container-low": "#fcf1f6",
+            "on-error-container": "#93000a",
+            "surface-tint": "#844981",
+            "inverse-primary": "#f6afef",
+            "surface-container-highest": "#eae0e5",
+            "text-primary": "#1E0C1F",
+            "secondary-fixed-dim": "#f8bd39",
+            "on-primary-container": "#be7db9",
+            "text-secondary": "#5E4A5F",
+            "outline-variant": "#d2c2cd",
+            "surface-bright": "#fff7fa",
+            "on-secondary": "#ffffff",
+            "error-container": "#ffdad6",
+            "primary-fixed-dim": "#f6afef",
+            "border": "#EADCEA",
+            "inverse-surface": "#352f33",
+            "background": "#FCF4FC",
+            "on-tertiary": "#ffffff",
+            "accent-pressed": "#3F1240",
+            "tertiary-fixed": "#dbe9a5",
+            "on-tertiary-fixed": "#171e00",
+            "primary": "#300033",
+            "outline": "#80737d",
+            "error": "#ba1a1a",
+            "on-background": "#1f1a1e",
+            "inverse-on-surface": "#f9eef3",
+            "surface-dim": "#e2d7dd",
+            "on-tertiary-container": "#8c995d",
+            "secondary": "#7b5900",
+            "on-secondary-fixed-variant": "#5d4200",
+            "surface-container": "#f6ebf0",
+            "on-secondary-container": "#705100",
+            "on-primary": "#ffffff",
+            "accent-tint": "#E6DEE6",
+            "on-tertiary-fixed-variant": "#404b17"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-sm": "8px",
+            "space-xl": "24px",
+            "space-2xl": "32px",
+            "gutter": "16px",
+            "space-lg": "16px",
+            "space-xs": "4px",
+            "space-md": "12px",
+            "margin": "20px"
+          },
+          "fontFamily": {
+            "display": ["Gloock", "serif"],
+            "caption": ["Lato", "sans-serif"],
+            "label": ["Lato", "sans-serif"],
+            "title": ["Lato", "sans-serif"],
+            "body": ["Lato", "sans-serif"]
+          },
+          "fontSize": {
+            "display": [
+              "32px",
+              {
+                "lineHeight": "38px",
+                "letterSpacing": "-0.02em",
+                "fontWeight": "700"
+              }
+            ],
+            "caption": [
+              "13px",
+              {
+                "lineHeight": "16px",
+                "fontWeight": "500"
+              }
+            ],
+            "label": [
+              "14px",
+              {
+                "lineHeight": "18px",
+                "fontWeight": "500"
+              }
+            ],
+            "title": [
+              "20px",
+              {
+                "lineHeight": "26px",
+                "fontWeight": "600"
+              }
+            ],
+            "body": [
+              "16px",
+              {
+                "lineHeight": "22px",
+                "fontWeight": "400"
+              }
+            ]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-family: 'Material Symbols Outlined';
+      font-weight: 300;
+      font-style: normal;
+      font-size: 22px;
+      line-height: 1;
+      display: inline-block;
+      text-transform: none;
+      letter-spacing: normal;
+      word-wrap: normal;
+      white-space: nowrap;
+      direction: ltr;
+      -webkit-font-smoothing: antialiased;
+      vertical-align: middle;
+    }
+    /* Ambient iOS layered shadow */
+    .ios-sheet-shadow {
+      box-shadow: 0 -2px 10px rgba(30, 12, 31, 0.04), 0 -12px 36px rgba(30, 12, 31, 0.12);
+    }
+    .custom-scroll::-webkit-scrollbar {
+      display: none;
+    }
+    .custom-scroll {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-[#1E0C1F]/60 text-text-primary antialiased h-full flex items-end justify-center select-none overflow-hidden font-body">
+<!-- iPhone Shell Container (Modal Simulation) -->
+<div class="relative w-full max-w-[393px] h-[852px] flex flex-col justify-between overflow-hidden shadow-2xl">
+<!-- iOS Simulated Top Bar & Under-Modal Glimpse -->
+<header class="w-full pt-3 px-7 flex justify-between items-center text-surface z-10 shrink-0">
+<span class="font-body text-[15px] font-semibold tracking-tight">9:41</span>
+<div class="flex items-center space-x-2">
+<span class="material-symbols-outlined text-[17px]">signal_cellular_alt</span>
+<span class="material-symbols-outlined text-[17px]">wifi</span>
+<span class="material-symbols-outlined text-[20px]">battery_full</span>
+</div>
+</header>
+<!-- Dismissible Tap Zone (Top backdrop) -->
+<div aria-label="Dismiss Modal" class="flex-1 w-full" role="button"></div>
+<!-- iOS Bottom Sheet Surface -->
+<main class="w-full bg-surface rounded-t-[28px] ios-sheet-shadow flex flex-col max-h-[792px] z-20 overflow-hidden border-t border-border/40">
+<!-- Top Grabber & Header -->
+<div class="w-full flex flex-col items-center pt-2.5 pb-2 px-margin shrink-0 bg-surface">
+<!-- Grabber Pill -->
+<div class="w-9 h-1 rounded-full bg-border mb-2.5"></div>
+<!-- Shared Component: TopAppBar small_center_aligned -->
+<div class="flex justify-between items-center w-full px-margin pt-space-md pb-space-sm bg-surface">
+<!-- Leading Icon -->
+<button aria-label="Close" class="w-8 h-8 rounded-full flex items-center justify-center text-text-secondary hover:opacity-80 active:scale-95 transition-all duration-150 -ml-1" type="button">
+<span class="material-symbols-outlined text-text-secondary">close</span>
+</button>
+<!-- Modal Title (Gloock Display Token) -->
+<h1 class="text-title font-title font-semibold text-text-primary font-display tracking-tight text-center">New habit</h1>
+<!-- Trailing Action -->
+<button class="text-label font-label text-text-secondary hover:opacity-80 active:scale-95 transition-all duration-150 text-right pr-0.5" type="button">Cancel</button>
+</div>
+</div>
+<!-- Sheet Scrollable Form Canvas -->
+<div class="flex-1 overflow-y-auto custom-scroll px-margin space-y-5 pb-6">
+<!-- 1. HABIT NAME INPUT -->
+<section class="space-y-1.5 pt-1">
+<label class="block font-caption text-caption uppercase text-text-secondary font-medium tracking-wider text-[11px]" for="habit-name">
+            HABIT NAME
+          </label>
+<div class="relative flex items-center">
+<input class="w-full h-12 bg-surface text-text-primary font-body text-body font-normal px-3.5 pr-10 rounded-xl border border-border focus:border-primary-container focus:ring-2 focus:ring-primary-container focus:outline-none transition-all placeholder:text-text-tertiary shadow-sm" id="habit-name" placeholder="e.g. Morning walk" type="text" value="Morning walk"/>
+<button aria-label="Clear text" class="absolute right-3 w-5 h-5 rounded-full bg-surface-alt text-text-secondary flex items-center justify-center hover:opacity-80 transition-opacity" type="button">
+<span class="material-symbols-outlined text-[14px]">close</span>
+</button>
+</div>
+</section>
+<!-- 2. ICON PICKER -->
+<section class="space-y-2">
+<label class="block font-caption text-caption uppercase text-text-secondary font-medium tracking-wider text-[11px]">
+            ICON
+          </label>
+<div class="flex items-center justify-between gap-1.5 overflow-x-auto py-0.5 custom-scroll">
+<!-- Walking (Selected) -->
+<button aria-label="Walking icon" class="w-11 h-11 rounded-full bg-primary-container text-surface flex items-center justify-center ring-2 ring-primary-container ring-offset-2 ring-offset-surface shadow-sm transition-transform active:scale-95" type="button">
+<span class="material-symbols-outlined text-[22px]">directions_walk</span>
+</button>
+<!-- Book -->
+<button aria-label="Book reading icon" class="w-11 h-11 rounded-full bg-surface-alt text-text-secondary hover:bg-surface-container flex items-center justify-center transition-all active:scale-95" type="button">
+<span class="material-symbols-outlined text-[20px]">menu_book</span>
+</button>
+<!-- Water -->
+<button aria-label="Water droplet icon" class="w-11 h-11 rounded-full bg-surface-alt text-text-secondary hover:bg-surface-container flex items-center justify-center transition-all active:scale-95" type="button">
+<span class="material-symbols-outlined text-[20px]">water_drop</span>
+</button>
+<!-- Dumbbell -->
+<button aria-label="Fitness workout icon" class="w-11 h-11 rounded-full bg-surface-alt text-text-secondary hover:bg-surface-container flex items-center justify-center transition-all active:scale-95" type="button">
+<span class="material-symbols-outlined text-[20px]">fitness_center</span>
+</button>
+<!-- Meditation -->
+<button aria-label="Mindfulness lotus icon" class="w-11 h-11 rounded-full bg-surface-alt text-text-secondary hover:bg-surface-container flex items-center justify-center transition-all active:scale-95" type="button">
+<span class="material-symbols-outlined text-[20px]">self_improvement</span>
+</button>
+<!-- Journal -->
+<button aria-label="Journal writing icon" class="w-11 h-11 rounded-full bg-surface-alt text-text-secondary hover:bg-surface-container flex items-center justify-center transition-all active:scale-95" type="button">
+<span class="material-symbols-outlined text-[20px]">edit_note</span>
+</button>
+</div>
+</section>
+<!-- 3. COLOR SWATCHES ROW -->
+<section class="space-y-2">
+<label class="block font-caption text-caption uppercase text-text-secondary font-medium tracking-wider text-[11px]">
+            COLOR
+          </label>
+<div class="flex items-center gap-3">
+<!-- Aubergine (Selected) -->
+<button aria-label="Select aubergine color" class="w-8 h-8 rounded-full bg-primary-container ring-2 ring-primary-container ring-offset-2 ring-offset-surface flex items-center justify-center text-surface shadow-sm" type="button">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</button>
+<!-- Warm Gold -->
+<button aria-label="Select warm gold color" class="w-8 h-8 rounded-full bg-[#ECB22E] hover:opacity-90 active:scale-95 transition-transform" type="button"></button>
+<!-- Sage Green -->
+<button aria-label="Select sage green color" class="w-8 h-8 rounded-full bg-[#4E8752] hover:opacity-90 active:scale-95 transition-transform" type="button"></button>
+<!-- Coral -->
+<button aria-label="Select coral color" class="w-8 h-8 rounded-full bg-[#E06D53] hover:opacity-90 active:scale-95 transition-transform" type="button"></button>
+<!-- Sky Blue -->
+<button aria-label="Select sky blue color" class="w-8 h-8 rounded-full bg-[#3B82F6] hover:opacity-90 active:scale-95 transition-transform" type="button"></button>
+</div>
+</section>
+<!-- 4. FREQUENCY SEGMENTED CONTROL -->
+<section class="space-y-2">
+<label class="block font-caption text-caption uppercase text-text-secondary font-medium tracking-wider text-[11px]">
+            FREQUENCY
+          </label>
+<div class="p-1 bg-surface-alt rounded-full flex items-center border border-border/50">
+<button class="flex-1 py-1.5 px-3 bg-primary-container text-surface rounded-full font-label text-label font-medium shadow-sm transition-all text-center" type="button">
+              Daily
+            </button>
+<button class="flex-1 py-1.5 px-3 text-text-secondary hover:text-text-primary rounded-full font-label text-label font-medium transition-all text-center" type="button">
+              Weekdays
+            </button>
+<button class="flex-1 py-1.5 px-3 text-text-secondary hover:text-text-primary rounded-full font-label text-label font-medium transition-all text-center" type="button">
+              Custom
+            </button>
+</div>
+</section>
+<!-- 5. GOAL STEPPER ROW -->
+<section class="space-y-2">
+<label class="block font-caption text-caption uppercase text-text-secondary font-medium tracking-wider text-[11px]">
+            DAILY GOAL
+          </label>
+<div class="bg-surface-alt/70 border border-border rounded-xl p-3 flex items-center justify-between">
+<div class="flex items-center space-x-2.5">
+<div class="w-8 h-8 rounded-lg bg-surface flex items-center justify-center text-primary-container border border-border/60">
+<span class="material-symbols-outlined text-[18px]">timer</span>
+</div>
+<span class="font-body text-body text-text-primary font-medium">Target duration</span>
+</div>
+<!-- Stepper Controller -->
+<div class="flex items-center space-x-2.5 bg-surface px-2 py-1 rounded-full border border-border shadow-xs">
+<button aria-label="Decrease time" class="w-7 h-7 rounded-full bg-surface-alt text-text-secondary hover:text-text-primary flex items-center justify-center active:scale-90 transition-transform" type="button">
+<span class="material-symbols-outlined text-[16px]">remove</span>
+</button>
+<span class="font-title text-label font-semibold text-text-primary min-w-[54px] text-center tabular-nums">30 min</span>
+<button aria-label="Increase time" class="w-7 h-7 rounded-full bg-surface-alt text-text-secondary hover:text-text-primary flex items-center justify-center active:scale-90 transition-transform" type="button">
+<span class="material-symbols-outlined text-[16px]">add</span>
+</button>
+</div>
+</div>
+</section>
+<!-- 6. TIME OF DAY CHIPS -->
+<section class="space-y-2">
+<label class="block font-caption text-caption uppercase text-text-secondary font-medium tracking-wider text-[11px]">
+            TIME OF DAY
+          </label>
+<div class="grid grid-cols-3 gap-2">
+<!-- Morning (Selected) -->
+<button class="py-2 px-3 bg-primary-container text-surface rounded-xl flex items-center justify-center space-x-1.5 shadow-sm active:scale-95 transition-transform" type="button">
+<span class="material-symbols-outlined text-[18px]">wb_sunny</span>
+<span class="font-label text-label font-medium">Morning</span>
+</button>
+<!-- Afternoon -->
+<button class="py-2 px-3 bg-surface-alt text-primary-container border border-border/70 rounded-xl flex items-center justify-center space-x-1.5 hover:bg-surface-container active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]">light_mode</span>
+<span class="font-label text-label font-medium">Afternoon</span>
+</button>
+<!-- Evening -->
+<button class="py-2 px-3 bg-surface-alt text-primary-container border border-border/70 rounded-xl flex items-center justify-center space-x-1.5 hover:bg-surface-container active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]">bedtime</span>
+<span class="font-label text-label font-medium">Evening</span>
+</button>
+</div>
+</section>
+<!-- 7. REMINDER ROW -->
+<section class="space-y-2">
+<label class="block font-caption text-caption uppercase text-text-secondary font-medium tracking-wider text-[11px]">
+            NOTIFICATION
+          </label>
+<div class="bg-surface-alt/70 border border-border rounded-xl p-3 flex items-center justify-between">
+<div class="flex items-center space-x-2.5">
+<div class="w-8 h-8 rounded-lg bg-surface flex items-center justify-center text-primary-container border border-border/60">
+<span class="material-symbols-outlined text-[18px]">notifications_active</span>
+</div>
+<span class="font-body text-body text-text-primary font-medium">Daily reminder</span>
+</div>
+<div class="flex items-center space-x-2.5">
+<!-- Time Badge -->
+<div class="px-2.5 py-1 bg-surface border border-border rounded-full font-label text-caption font-semibold text-text-primary shadow-xs">
+                7:00 AM
+              </div>
+<!-- iOS Switch Toggle (ON State) -->
+<div class="w-12 h-7 bg-primary-container rounded-full p-0.5 flex items-center justify-end cursor-pointer shadow-inner transition-colors">
+<div class="w-6 h-6 bg-surface rounded-full shadow-md transform transition-transform"></div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- 8. BOTTOM ACTION BUTTON & HOME INDICATOR -->
+<footer class="w-full bg-surface/95 backdrop-blur-md px-margin pt-3 pb-8 shrink-0 flex flex-col items-center">
+<!-- Full-Width Primary Pill Button -->
+<button class="w-full py-3.5 px-6 rounded-full bg-primary-container text-surface font-title text-body font-bold shadow-md hover:opacity-95 active:bg-accent-pressed active:scale-[0.99] transition-all flex items-center justify-center space-x-2" type="button">
+<span>Create habit</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+<!-- iOS Home Indicator Clearance -->
+<div class="w-32 h-1 bg-text-primary/20 rounded-full mt-5"></div>
+</footer>
+</main>
+</div>
+</body></html>

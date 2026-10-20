@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>Anchor - Today</title>
+<!-- Google Fonts: Gloock & Lato -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Gloock&amp;family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      line-height: 1;
+    }
+  </style>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "secondary-container": "#ffc23e",
+            "accent-pressed": "#3F1240",
+            "inverse-primary": "#f6afef",
+            "surface-container-low": "#fcf1f6",
+            "text-secondary": "#5E4A5F",
+            "surface-variant": "#eae0e5",
+            "surface-container-lowest": "#ffffff",
+            "on-tertiary-fixed": "#171e00",
+            "on-surface": "#1f1a1e",
+            "primary": "#300033",
+            "secondary": "#7b5900",
+            "tertiary-container": "#263000",
+            "primary-container": "#4a154b",
+            "tertiary": "#141a00",
+            "text-tertiary": "#8F7D90",
+            "on-secondary-fixed": "#261900",
+            "on-primary-fixed-variant": "#693168",
+            "outline": "#80737d",
+            "tertiary-fixed-dim": "#bfcd8b",
+            "tertiary-fixed": "#dbe9a5",
+            "danger": "#DC2626",
+            "surface-bright": "#fff7fa",
+            "surface": "#FFFFFF",
+            "background": "#FCF4FC",
+            "secondary-fixed-dim": "#f8bd39",
+            "surface-dim": "#e2d7dd",
+            "on-tertiary-fixed-variant": "#404b17",
+            "on-primary-container": "#be7db9",
+            "border": "#EADCEA",
+            "surface-tint": "#844981",
+            "secondary-fixed": "#ffdea4",
+            "on-secondary": "#ffffff",
+            "on-error": "#ffffff",
+            "primary-fixed-dim": "#f6afef",
+            "on-tertiary": "#ffffff",
+            "on-secondary-container": "#705100",
+            "on-surface-variant": "#4f434c",
+            "on-primary-fixed": "#370139",
+            "text-primary": "#1E0C1F",
+            "surface-container-high": "#f0e5eb",
+            "surface-container": "#f6ebf0",
+            "on-primary": "#ffffff",
+            "error": "#ba1a1a",
+            "error-container": "#ffdad6",
+            "accent-tint": "#E6DEE6",
+            "on-secondary-fixed-variant": "#5d4200",
+            "inverse-surface": "#352f33",
+            "on-background": "#1f1a1e",
+            "surface-alt": "#F7EEF7",
+            "warning": "#D97706",
+            "inverse-on-surface": "#f9eef3",
+            "surface-container-highest": "#eae0e5",
+            "outline-variant": "#d2c2cd",
+            "on-error-container": "#93000a",
+            "on-tertiary-container": "#8c995d",
+            "primary-fixed": "#ffd6f8",
+            "success": "#16A34A"
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "20": "20px",
+            "full": "9999px"
+          },
+          spacing: {
+            "space-xs": "4px",
+            "space-sm": "8px",
+            "space-md": "12px",
+            "space-lg": "16px",
+            "space-xl": "24px",
+            "space-2xl": "32px",
+            "margin": "20px",
+            "gutter": "16px"
+          },
+          fontFamily: {
+            "label": ["Lato", "sans-serif"],
+            "title": ["Lato", "sans-serif"],
+            "caption": ["Lato", "sans-serif"],
+            "display": ["Gloock", "serif"],
+            "body": ["Lato", "sans-serif"]
+          },
+          fontSize: {
+            "label": ["14px", { lineHeight: "18px", fontWeight: "500" }],
+            "title": ["20px", { lineHeight: "26px", fontWeight: "600" }],
+            "caption": ["13px", { lineHeight: "16px", fontWeight: "500" }],
+            "display": ["32px", { lineHeight: "38px", letterSpacing: "-0.02em", fontWeight: "700" }],
+            "body": ["16px", { lineHeight: "22px", fontWeight: "400" }]
+          },
+          boxShadow: {
+            "ios-card": "0 1px 2px rgba(30,12,31,.04), 0 8px 24px rgba(30,12,31,.06)"
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-background text-text-primary antialiased h-full flex justify-center items-start min-h-screen">
+<!-- iPhone Frame Shell (393px width fixed for iOS standard) -->
+<div class="relative w-full max-w-[393px] min-h-screen bg-background flex flex-col justify-between overflow-x-hidden pb-[90px]">
+<!-- iOS Status Bar Safe Area Spacer (~54px) -->
+<header class="pt-14 px-margin pb-space-sm flex justify-between items-center bg-transparent">
+<!-- Left: Morning Salutation -->
+<div>
+<h1 class="font-display text-[30px] leading-[34px] font-bold text-text-primary">Good morning, Maya</h1>
+<p class="font-caption text-caption text-text-secondary mt-1">Tuesday, Oct 21</p>
+</div>
+<!-- Right: User Avatar with warm gold ring -->
+<div class="relative flex-shrink-0 cursor-pointer active:scale-95 transition-transform duration-150">
+<div class="w-12 h-12 rounded-full p-[2px] bg-secondary-container flex items-center justify-center">
+<img alt="Maya Chen" class="w-full h-full object-cover rounded-full" src="https://lh3.googleusercontent.com/aida/AEtjO1Ueu2YRgsNNdip-4ihPnjgpLIRAfvXjWQlnwZcOUxkINFnEzzSfh2mYQn3TGOktda4mCq4ma6Y70tJhUXfL9TuAh2mhDGj04lO3pHZK3ZG_SM1KLmMiHiL5dy_j0RQoCBly9kwCPv6x8ENcQvdz4YUMJ9KqFNGAiRCX8uTBeoibu3qeqYSVBktiOgleuC2a6bpfM-f8DO7PTy1efCsoRJLLjchAAEANViIWiCPVNafeNcCPUDsliHLKtwo"/>
+</div>
+</div>
+</header>
+<!-- Main Content: Empty State Hero Card & Suggestions -->
+<main class="flex-1 px-margin pt-space-xs flex flex-col justify-center">
+<!-- Primary Empty State Card -->
+<section class="bg-surface rounded-20 p-space-margin shadow-ios-card transition-all duration-200">
+<!-- Notebook Hero Real Photo -->
+<div class="w-full h-[188px] rounded-20 overflow-hidden relative bg-surface-container">
+<img alt="Open notebook and brass pen on natural wood desk with soft morning daylight" class="w-full h-full object-cover rounded-20" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNbzXBXnIjt1kSoD_atreUoibaX7q_CvmYYfQqX2bfoUTz7rU6VrUT7OWSOfDlPwKQPtHTNv-SsQ_xZsLongYzHSv-YJGMrSmrSstxb1ss-ofAy2Z_fAFMxtH3-dWwJS6WgkUq9GTMavOIJwKheo-XZAE_pCb4cxkXGGSZIu061x0ZQyvb2-i8dVLM5ugXQ083eSfykxhiIScEZoBp4wyF5Nei3V1mRODyOCAaiHAKF70PguFQ2kI8VU9hBStC5qkOK3SWc0hlaXc"/>
+</div>
+<!-- Typography Content -->
+<h2 class="font-display text-title text-text-primary font-bold text-center mt-space-lg">
+          Your first habit starts here
+        </h2>
+<p class="font-label text-label text-text-secondary text-center mt-space-xs px-2">
+          Small daily wins build big streaks. Add one habit to begin.
+        </p>
+<!-- Primary CTA Button -->
+<button class="w-full mt-space-xl py-3.5 bg-primary-container hover:bg-accent-pressed active:scale-98 transition-all duration-150 rounded-full flex items-center justify-center gap-2 text-surface font-label text-label font-bold shadow-sm" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="add">add</span>
+<span>Add a habit</span>
+</button>
+</section>
+<!-- Quick Suggestions Section -->
+<section class="mt-space-xl">
+<h3 class="text-[12px] font-semibold text-text-tertiary tracking-wider uppercase text-center mb-space-md">
+          Quick suggestions
+        </h3>
+<div class="flex flex-wrap items-center justify-center gap-space-sm px-1">
+<button class="bg-[#F3EAF3] hover:bg-surface-variant active:scale-95 transition-all duration-150 text-primary-container px-4 py-2 rounded-full font-label text-caption font-medium" type="button">
+            Meditate
+          </button>
+<button class="bg-[#F3EAF3] hover:bg-surface-variant active:scale-95 transition-all duration-150 text-primary-container px-4 py-2 rounded-full font-label text-caption font-medium" type="button">
+            Read
+          </button>
+<button class="bg-[#F3EAF3] hover:bg-surface-variant active:scale-95 transition-all duration-150 text-primary-container px-4 py-2 rounded-full font-label text-caption font-medium" type="button">
+            Walk
+          </button>
+<button class="bg-[#F3EAF3] hover:bg-surface-variant active:scale-95 transition-all duration-150 text-primary-container px-4 py-2 rounded-full font-label text-caption font-medium" type="button">
+            No phone in bed
+          </button>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar (Docked full width with border-t separator) -->
+<nav class="fixed bottom-0 left-0 right-0 w-full z-50 bg-surface border-t border-border">
+<div class="max-w-[393px] mx-auto px-margin pt-space-xs pb-[30px] flex justify-around items-center">
+<!-- Tab 1: Today (ACTIVE) -->
+<a class="flex flex-col items-center justify-center text-primary-container relative before:content-[''] before:w-1.5 before:h-1.5 before:bg-secondary-container before:rounded-full before:mb-1 transition-transform active:scale-95 duration-150" href="#today">
+<span class="material-symbols-outlined text-[24px]" data-icon="check_circle">check_circle</span>
+<span class="font-caption text-[11px] font-bold mt-0.5">Today</span>
+</a>
+<!-- Tab 2: Focus (Inactive) -->
+<a class="flex flex-col items-center justify-center text-text-tertiary pt-2.5 transition-transform active:scale-95 duration-150 hover:opacity-80" href="#focus">
+<span class="material-symbols-outlined text-[24px]" data-icon="timer">timer</span>
+<span class="font-caption text-[11px] font-medium mt-0.5">Focus</span>
+</a>
+<!-- Tab 3: Blocks (Inactive) -->
+<a class="flex flex-col items-center justify-center text-text-tertiary pt-2.5 transition-transform active:scale-95 duration-150 hover:opacity-80" href="#blocks">
+<span class="material-symbols-outlined text-[24px]" data-icon="shield">shield</span>
+<span class="font-caption text-[11px] font-medium mt-0.5">Blocks</span>
+</a>
+<!-- Tab 4: Insights (Inactive) -->
+<a class="flex flex-col items-center justify-center text-text-tertiary pt-2.5 transition-transform active:scale-95 duration-150 hover:opacity-80" href="#insights">
+<span class="material-symbols-outlined text-[24px]" data-icon="bar_chart">bar_chart</span>
+<span class="font-caption text-[11px] font-medium mt-0.5">Insights</span>
+</a>
+<!-- Tab 5: Profile (Inactive) -->
+<a class="flex flex-col items-center justify-center text-text-tertiary pt-2.5 transition-transform active:scale-95 duration-150 hover:opacity-80" href="#profile">
+<span class="material-symbols-outlined text-[24px]" data-icon="person">person</span>
+<span class="font-caption text-[11px] font-medium mt-0.5">Profile</span>
+</a>
+</div>
+</nav>
+</div>
+</body></html>

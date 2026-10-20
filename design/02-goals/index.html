@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Anchor - Goals Picker</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Gloock&amp;family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-tertiary-container": "#8c995d",
+            "on-tertiary": "#ffffff",
+            "accent-pressed": "#3F1240",
+            "inverse-surface": "#352f33",
+            "surface-tint": "#844981",
+            "surface-alt": "#F7EEF7",
+            "on-error": "#ffffff",
+            "on-primary": "#ffffff",
+            "error-container": "#ffdad6",
+            "on-secondary-container": "#705100",
+            "accent-tint": "#E6DEE6",
+            "on-primary-container": "#be7db9",
+            "surface-dim": "#e2d7dd",
+            "secondary": "#7b5900",
+            "inverse-primary": "#f6afef",
+            "primary-fixed": "#ffd6f8",
+            "on-secondary": "#ffffff",
+            "surface-container": "#f6ebf0",
+            "on-surface": "#1f1a1e",
+            "tertiary-fixed": "#dbe9a5",
+            "tertiary": "#141a00",
+            "success": "#16A34A",
+            "on-surface-variant": "#4f434c",
+            "inverse-on-surface": "#f9eef3",
+            "tertiary-container": "#263000",
+            "primary-container": "#4a154b",
+            "border": "#EADCEA",
+            "error": "#ba1a1a",
+            "outline": "#80737d",
+            "surface-container-lowest": "#ffffff",
+            "secondary-container": "#ffc23e",
+            "warning": "#D97706",
+            "surface-container-highest": "#eae0e5",
+            "surface": "#FFFFFF",
+            "on-primary-fixed-variant": "#693168",
+            "on-background": "#1f1a1e",
+            "on-tertiary-fixed": "#171e00",
+            "on-secondary-fixed": "#261900",
+            "secondary-fixed": "#ffdea4",
+            "secondary-fixed-dim": "#f8bd39",
+            "primary": "#300033",
+            "outline-variant": "#d2c2cd",
+            "primary-fixed-dim": "#f6afef",
+            "surface-bright": "#fff7fa",
+            "on-primary-fixed": "#370139",
+            "text-secondary": "#5E4A5F",
+            "background": "#FCF4FC",
+            "tertiary-fixed-dim": "#bfcd8b",
+            "surface-variant": "#eae0e5",
+            "on-tertiary-fixed-variant": "#404b17",
+            "text-primary": "#1E0C1F",
+            "text-tertiary": "#8F7D90",
+            "danger": "#DC2626",
+            "on-error-container": "#93000a",
+            "on-secondary-fixed-variant": "#5d4200",
+            "surface-container-low": "#fcf1f6",
+            "surface-container-high": "#f0e5eb"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "2xl": "1.25rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xs": "4px",
+            "space-xl": "24px",
+            "space-md": "12px",
+            "margin": "20px",
+            "gutter": "16px",
+            "space-lg": "16px",
+            "space-sm": "8px",
+            "space-2xl": "32px"
+          },
+          "fontFamily": {
+            "caption": ["Lato"],
+            "body": ["Lato"],
+            "label": ["Lato"],
+            "title": ["Lato"],
+            "display": ["Gloock"]
+          },
+          "fontSize": {
+            "caption": ["13px", { "lineHeight": "16px", "fontWeight": "500" }],
+            "body": ["16px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "label": ["14px", { "lineHeight": "18px", "fontWeight": "500" }],
+            "title": ["20px", { "lineHeight": "26px", "fontWeight": "600" }],
+            "display": ["32px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+          },
+          "boxShadow": {
+            "subtle": "0 1px 2px rgba(30,12,31,.04), 0 8px 24px rgba(30,12,31,.06)"
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      line-height: 1;
+      text-transform: none;
+      letter-spacing: normal;
+      word-wrap: normal;
+      white-space: nowrap;
+      direction: ltr;
+    }
+    /* Hide scrollbars gracefully */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="bg-[#2D1B2E] text-text-primary min-h-screen flex items-center justify-center p-0 md:p-6 antialiased selection:bg-primary-container selection:text-white">
+<!-- iPhone Viewport Shell (393px × 852px) -->
+<main class="w-full max-w-[393px] h-[852px] bg-background relative flex flex-col justify-between overflow-hidden shadow-2xl md:rounded-[52px] border-0 md:border-[10px] md:border-[#1E0C1F]/15">
+<!-- Top Floating Safe Area & Status Bar (~59px) -->
+<header class="w-full pt-3 px-7 flex items-center justify-between text-text-primary z-30 select-none">
+<span class="font-body text-[15px] font-semibold tracking-tight">9:41</span>
+<div class="flex items-center space-x-2 text-text-primary">
+<span class="material-symbols-outlined text-[17px]">signal_cellular_4_bar</span>
+<span class="material-symbols-outlined text-[17px]">wifi</span>
+<span class="material-symbols-outlined text-[20px]">battery_full</span>
+</div>
+</header>
+<!-- Navigation Header (Step 2 of 4 from Shared Components JSON + Progress Bar) -->
+<section class="w-full px-margin pt-1 pb-2 flex flex-col z-20">
+<div class="flex justify-between items-center w-full h-12">
+<!-- Back Button -->
+<button aria-label="Go back" class="w-9 h-9 flex items-center justify-center rounded-full hover:opacity-80 active:scale-95 transition-all text-text-primary -ml-1" type="button">
+<span class="material-symbols-outlined text-[22px]" data-icon="arrow_back_ios_new">arrow_back_ios_new</span>
+</button>
+<!-- Segmented/Continuous Progress Track -->
+<div class="flex-1 mx-4 max-w-[150px]">
+<div class="w-full h-1 bg-border rounded-full overflow-hidden">
+<div class="w-1/2 h-full bg-primary-container rounded-full transition-all duration-300"></div>
+</div>
+</div>
+<!-- Trailing Skip Action -->
+<button class="font-body text-body font-normal text-text-secondary hover:opacity-80 active:scale-95 transition-opacity px-1" type="button">
+          Skip
+        </button>
+</div>
+<!-- Step Counter Headline -->
+<div class="w-full text-center mt-[-6px]">
+<span class="font-caption text-caption text-text-tertiary font-semibold tracking-wider uppercase">Step 2 of 4</span>
+</div>
+</section>
+<!-- Scrollable Content Canvas -->
+<div class="flex-1 px-margin overflow-y-auto no-scrollbar pb-6 z-10 flex flex-col">
+<!-- Typography Header -->
+<header class="pt-2 pb-5">
+<h1 class="font-display text-display text-text-primary leading-tight">
+          What do you want to change?
+        </h1>
+<p class="font-body text-body text-text-secondary mt-2">
+          Pick up to 3. We will set up your first habits.
+        </p>
+</header>
+<!-- Goal Selection Grid (2 Columns, 6 Cards) -->
+<div class="grid grid-cols-2 gap-3.5 w-full">
+<!-- Card 1: Less doomscrolling (SELECTED) -->
+<div class="relative bg-surface rounded-2xl p-2.5 shadow-subtle border-2 border-primary-container flex flex-col cursor-pointer transition-transform active:scale-[0.98] group">
+<!-- Selection Badge -->
+<div class="absolute top-4 right-4 z-10 w-6 h-6 rounded-full bg-primary-container flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-white text-[16px] font-bold" data-weight="fill">check</span>
+</div>
+<!-- Thumbnail -->
+<div class="w-full aspect-[4/3] rounded-xl overflow-hidden bg-surface-alt">
+<img alt="Hand placing smartphone screen-down on bed" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtS84rgMGDmTrhcfrGjKe-hQHvKR5m84SPbhq4D2kX0SDiD3VEq9nj_MCAcTbQwXW5SpEs1aQmmiqGK6-9TLUHChGTgS_qlkMxUbxxlb7nR6snXPBF09JxMKvNMrpx_E7_yKy-KAJU6nWJKle8EuxTet4SOcA1p1Cu3B2nUY6crgaDvaZ4-O5a8cj8R3s6wSlAuKJmETMyremupLraTSMKYizqvjLd69R4xVLLo6lrTz3GkyU3ZIwUWBjnLXCD4VLqpQuk4u0szE0"/>
+</div>
+<!-- Label -->
+<div class="pt-3 pb-1 px-1">
+<h2 class="font-body text-[15px] font-semibold text-text-primary leading-snug">
+              Less doomscrolling
+            </h2>
+</div>
+</div>
+<!-- Card 2: Deep work (SELECTED) -->
+<div class="relative bg-surface rounded-2xl p-2.5 shadow-subtle border-2 border-primary-container flex flex-col cursor-pointer transition-transform active:scale-[0.98] group">
+<!-- Selection Badge -->
+<div class="absolute top-4 right-4 z-10 w-6 h-6 rounded-full bg-primary-container flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-white text-[16px] font-bold" data-weight="fill">check</span>
+</div>
+<!-- Thumbnail -->
+<div class="w-full aspect-[4/3] rounded-xl overflow-hidden bg-surface-alt">
+<img alt="Person working focused at desk with laptop in morning light" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmY89nDzcrb5XDwmwZF0pe4a0bQ_DHZSVf8hOtO3txZ9ENlQxUAwwor_HjfCVyR8kv-DymHS8QDr-jKmH-P0MRP-59Y0dXZPCErAOW_dlfXUchOCjeqxeIwcOWLbJ3piEJAfwfcFQlZfZ5e1naOW7fwf-FTSmRDWtkz9gxUS_lAEZFCWAtTHxs-Urt99NSW-NbRnjvf6Soi4Qtr76RB4JmKFbV8IqslEw0Tg8y6qY2eIRds5nzBrb_oYI1RfoSrTZqOUywQpnXgK4"/>
+</div>
+<!-- Label -->
+<div class="pt-3 pb-1 px-1">
+<h2 class="font-body text-[15px] font-semibold text-text-primary leading-snug">
+              Deep work
+            </h2>
+</div>
+</div>
+<!-- Card 3: Morning routine (SELECTED) -->
+<div class="relative bg-surface rounded-2xl p-2.5 shadow-subtle border-2 border-primary-container flex flex-col cursor-pointer transition-transform active:scale-[0.98] group">
+<!-- Selection Badge -->
+<div class="absolute top-4 right-4 z-10 w-6 h-6 rounded-full bg-primary-container flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-white text-[16px] font-bold" data-weight="fill">check</span>
+</div>
+<!-- Thumbnail -->
+<div class="w-full aspect-[4/3] rounded-xl overflow-hidden bg-surface-alt">
+<img alt="Calm morning sunrise over kitchen table with ceramic mug" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbX2G4w3DcrpdGGq7DIX0QXZiKFJtGj9Op1dbjitnW9ASzCS9B03vI5ZvGntzLz0SmHiuQC6zzfq-w53DqNM10BizEW7mGH5h0zgGBVr4Q0p-S9v52mrRmSulKL6DvxIuCM9rG_r8idgBILd47ogCyc1E1HSKDBjQowuyVLGkXp1vyyMF_ogMP2xqkQqH3NEq5dIDhRKQGDVFyGU8VE5iXHUwh8taVMLvG8z7QFzC1x5lo2PsH3hwYQvaSCiUyWLSKMKvNLvU0Gz0"/>
+</div>
+<!-- Label -->
+<div class="pt-3 pb-1 px-1">
+<h2 class="font-body text-[15px] font-semibold text-text-primary leading-snug">
+              Morning routine
+            </h2>
+</div>
+</div>
+<!-- Card 4: Better sleep (UNSELECTED) -->
+<div class="relative bg-surface rounded-2xl p-2.5 shadow-subtle border border-border flex flex-col cursor-pointer transition-transform active:scale-[0.98] group hover:border-outline-variant">
+<!-- Unselected Radio/Badge -->
+<div class="absolute top-4 right-4 z-10 w-6 h-6 rounded-full bg-surface/90 backdrop-blur-sm border border-border flex items-center justify-center shadow-sm group-hover:border-outline">
+<div class="w-2 h-2 rounded-full bg-transparent"></div>
+</div>
+<!-- Thumbnail -->
+<div class="w-full aspect-[4/3] rounded-xl overflow-hidden bg-surface-alt">
+<img alt="Tidy serene bedroom with warm glowing bedside lamp" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 opacity-95" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvR8ZcU2_JqjsLgykD_Y7ewMwvatLoVL9_hQ9qUdu5VWUfbYoWhR9iZ7YJXIpVhA0ZBNnr3NJ86ksKlbbXVpp-FF9goRAZzbvhIU_9Pxp-UFpAmxWCb2hWhqg_X8gPXC7Lg2wo5lMFxKtmwECh5y-G5pSpdK-BwjHhIjF5zYRh-aM_rRfBLbX0B3mKs6xKGJzFGLfHmeSStMeMNWe7erspIqqt6_G1cqZtxgAaqQ_Hkz-vDkqhXdGorYJYnohUY5Pkb9M2QcR73z8"/>
+</div>
+<!-- Label -->
+<div class="pt-3 pb-1 px-1">
+<h2 class="font-body text-[15px] font-semibold text-text-primary leading-snug">
+              Better sleep
+            </h2>
+</div>
+</div>
+<!-- Card 5: Exercise (UNSELECTED) -->
+<div class="relative bg-surface rounded-2xl p-2.5 shadow-subtle border border-border flex flex-col cursor-pointer transition-transform active:scale-[0.98] group hover:border-outline-variant">
+<!-- Unselected Radio/Badge -->
+<div class="absolute top-4 right-4 z-10 w-6 h-6 rounded-full bg-surface/90 backdrop-blur-sm border border-border flex items-center justify-center shadow-sm group-hover:border-outline">
+<div class="w-2 h-2 rounded-full bg-transparent"></div>
+</div>
+<!-- Thumbnail -->
+<div class="w-full aspect-[4/3] rounded-xl overflow-hidden bg-surface-alt">
+<img alt="Close-up of running shoes on park path with sunlight" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 opacity-95" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrccrxYo9CEdRg1SjW_cLjV8XCgtooo8LXutA_0Xs_upWw7UWtwtEKlbXoJ4M0M0VbKgBINRuzjegUhMgdImE6g5JybQ8JvDqxPiSd7OscWy1yGDm2GTEZxaMVRbGfHnevEgkbguyCmHjRKeG7bdedD-LdrHSFSjPYyPfG5algVIosbo0xfMxChiF-gxRPzGsPIof4ddueIfQBkpqbH4REox-t7YjjLgWKTJ4vdIWXC5QUKjlMAYmQaS8O4N6JMu3RB-t7VSGcqu8"/>
+</div>
+<!-- Label -->
+<div class="pt-3 pb-1 px-1">
+<h2 class="font-body text-[15px] font-semibold text-text-primary leading-snug">
+              Exercise
+            </h2>
+</div>
+</div>
+<!-- Card 6: Reading (UNSELECTED) -->
+<div class="relative bg-surface rounded-2xl p-2.5 shadow-subtle border border-border flex flex-col cursor-pointer transition-transform active:scale-[0.98] group hover:border-outline-variant">
+<!-- Unselected Radio/Badge -->
+<div class="absolute top-4 right-4 z-10 w-6 h-6 rounded-full bg-surface/90 backdrop-blur-sm border border-border flex items-center justify-center shadow-sm group-hover:border-outline">
+<div class="w-2 h-2 rounded-full bg-transparent"></div>
+</div>
+<!-- Thumbnail -->
+<div class="w-full aspect-[4/3] rounded-xl overflow-hidden bg-surface-alt">
+<img alt="Hardcover book and eyeglasses resting on wooden desk" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 opacity-95" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeOrKGjaOwUgv3U1e8KoYxk0ClCILQk21bn0wD8lxhI9_A-on__hYiwmzFX0NrXZ_HWcUmbHMt-asQcF7P6xBoYTQb2Mwg-XH51UlFC-b4st_CweuPdOsBeXjGWynIAAS2_q-zso7cvlnFmZETDeH7XVdOKfV0JrXQDd6kzm2_ijdgns1in78GcdyQRwDYQCz-Hhz-cVAZ06-fwlBRorh9TEaXHltdYEL_c2lOZy7XwmfMSFCSpvJK7a_E8RcbWAPkPb8jZkkWCVA"/>
+</div>
+<!-- Label -->
+<div class="pt-3 pb-1 px-1">
+<h2 class="font-body text-[15px] font-semibold text-text-primary leading-snug">
+              Reading
+            </h2>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Action CTA Area (Anchored above Home Indicator) -->
+<footer class="w-full px-margin pt-3 pb-2 bg-gradient-to-t from-background via-background/95 to-transparent z-30 flex flex-col items-center">
+<!-- Primary Aubergine Pill Button -->
+<button class="w-full h-14 bg-primary-container hover:bg-accent-pressed active:scale-[0.98] text-white rounded-full font-body text-body font-bold shadow-md transition-all duration-150 flex items-center justify-center space-x-2" type="button">
+<span>Continue</span>
+<span class="inline-flex items-center justify-center px-2 py-0.5 text-xs font-semibold bg-white/20 rounded-full tracking-wide">3/3</span>
+</button>
+<!-- iOS Home Indicator (~34px safe area clearance) -->
+<div class="w-full h-8 flex items-center justify-center pt-2">
+<div class="w-36 h-1.5 bg-text-primary/80 rounded-full"></div>
+</div>
+</footer>
+</main>
+</body></html>

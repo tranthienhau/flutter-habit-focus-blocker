@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Anchor Shield - Screen Time Block</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Gloock&amp;family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-tertiary-container": "#8c995d",
+            "on-tertiary": "#ffffff",
+            "tertiary-fixed": "#dbe9a5",
+            "on-error": "#ffffff",
+            "surface-container-low": "#fcf1f6",
+            "on-primary-fixed": "#370139",
+            "border": "#EADCEA",
+            "background": "#FCF4FC",
+            "secondary-fixed-dim": "#f8bd39",
+            "danger": "#DC2626",
+            "surface": "#FFFFFF",
+            "surface-container-highest": "#eae0e5",
+            "surface-bright": "#fff7fa",
+            "on-primary-container": "#be7db9",
+            "on-error-container": "#93000a",
+            "primary-container": "#4a154b",
+            "text-tertiary": "#8F7D90",
+            "on-tertiary-fixed-variant": "#404b17",
+            "on-secondary": "#ffffff",
+            "primary-fixed": "#ffd6f8",
+            "inverse-surface": "#352f33",
+            "error": "#ba1a1a",
+            "on-secondary-fixed": "#261900",
+            "text-primary": "#1E0C1F",
+            "on-secondary-container": "#705100",
+            "inverse-primary": "#f6afef",
+            "on-surface-variant": "#4f434c",
+            "surface-dim": "#e2d7dd",
+            "primary-fixed-dim": "#f6afef",
+            "on-primary-fixed-variant": "#693168",
+            "on-secondary-fixed-variant": "#5d4200",
+            "error-container": "#ffdad6",
+            "accent-pressed": "#3F1240",
+            "inverse-on-surface": "#f9eef3",
+            "success": "#16A34A",
+            "on-surface": "#1f1a1e",
+            "warning": "#D97706",
+            "surface-container": "#f6ebf0",
+            "secondary-fixed": "#ffdea4",
+            "text-secondary": "#5E4A5F",
+            "surface-container-high": "#f0e5eb",
+            "on-background": "#1f1a1e",
+            "tertiary-container": "#263000",
+            "tertiary": "#141a00",
+            "accent-tint": "#E6DEE6",
+            "secondary-container": "#ffc23e",
+            "surface-tint": "#844981",
+            "surface-container-lowest": "#ffffff",
+            "surface-alt": "#F7EEF7",
+            "outline": "#80737d",
+            "tertiary-fixed-dim": "#bfcd8b",
+            "outline-variant": "#d2c2cd",
+            "on-tertiary-fixed": "#171e00",
+            "on-primary": "#ffffff",
+            "primary": "#300033",
+            "surface-variant": "#eae0e5",
+            "secondary": "#7b5900",
+            "brand-aubergine-dark": "#4A154B",
+            "brand-aubergine-light": "#6B2A5E",
+            "brand-gold": "#ECB22E"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "2xl": "1.25rem",
+            "3xl": "1.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-sm": "8px",
+            "margin": "20px",
+            "space-lg": "16px",
+            "space-xl": "24px",
+            "space-xs": "4px",
+            "space-md": "12px",
+            "space-2xl": "32px",
+            "gutter": "16px"
+          },
+          "fontFamily": {
+            "display": ["Gloock", "serif"],
+            "caption": ["Lato", "sans-serif"],
+            "body": ["Lato", "sans-serif"],
+            "title": ["Lato", "sans-serif"],
+            "label": ["Lato", "sans-serif"]
+          },
+          "fontSize": {
+            "display": [
+              "32px",
+              {
+                "lineHeight": "38px",
+                "letterSpacing": "-0.02em",
+                "fontWeight": "700"
+              }
+            ],
+            "caption": [
+              "13px",
+              {
+                "lineHeight": "16px",
+                "fontWeight": "500"
+              }
+            ],
+            "body": [
+              "16px",
+              {
+                "lineHeight": "22px",
+                "fontWeight": "400"
+              }
+            ],
+            "title": [
+              "20px",
+              {
+                "lineHeight": "26px",
+                "fontWeight": "600"
+              }
+            ],
+            "label": [
+              "14px",
+              {
+                "lineHeight": "18px",
+                "fontWeight": "500"
+              }
+            ]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .custom-gradient-bg {
+      background: linear-gradient(168deg, #4A154B 0%, #581C53 45%, #6B2A5E 100%);
+    }
+    .ambient-glow {
+      background: radial-gradient(circle, rgba(236, 178, 46, 0.18) 0%, rgba(236, 178, 46, 0.04) 45%, rgba(74, 21, 75, 0) 70%);
+    }
+    .badge-shadow {
+      box-shadow: 0 10px 30px -4px rgba(0, 0, 0, 0.35), 0 0 24px 2px rgba(236, 178, 46, 0.22);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-[#1E0C1F] text-white antialiased h-full flex items-center justify-center m-0 p-0 font-body select-none">
+<!-- iPhone 15 Pro Frame Canvas (393 x 852 pt) -->
+<main class="relative w-full max-w-[393px] h-[852px] max-h-screen overflow-hidden flex flex-col justify-between custom-gradient-bg shadow-2xl">
+<!-- Warm Ambient Radial Glow Behind Hero -->
+<div class="ambient-glow absolute top-16 left-1/2 -translate-x-1/2 w-[340px] h-[340px] pointer-events-none z-0"></div>
+<!-- 1. Top Status Area (Safe Area Clearance ~59px) -->
+<header class="relative z-10 w-full pt-[14px] px-7 flex items-center justify-between text-white tracking-tight">
+<span class="font-label text-label font-bold tracking-tight text-[15px] pl-1">9:41</span>
+<div class="flex items-center space-x-2 text-[14px]">
+<!-- Cellular Signal Bars -->
+<span class="material-symbols-outlined text-[17px] leading-none" data-icon="signal_cellular_4_bar">signal_cellular_4_bar</span>
+<!-- Wi-Fi -->
+<span class="material-symbols-outlined text-[17px] leading-none" data-icon="wifi">wifi</span>
+<!-- Battery Icon -->
+<span class="material-symbols-outlined text-[20px] leading-none" data-icon="battery_full">battery_full</span>
+</div>
+</header>
+<!-- Center Immersion Canvas -->
+<section class="relative z-10 flex-1 flex flex-col justify-between px-margin pt-6 pb-2">
+<!-- Top Group: Hero & App Info -->
+<div class="flex flex-col items-center text-center mt-3">
+<!-- 2. Centered Brand/App Mark Squircle -->
+<div class="relative group">
+<div class="w-[62px] h-[62px] rounded-2xl bg-surface flex items-center justify-center badge-shadow transition-transform duration-300 ease-out active:scale-95">
+<!-- Anchor Custom Stroke Mark -->
+<svg class="w-8 h-8 text-[#4A154B]" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24">
+<circle cx="12" cy="5" r="3"></circle>
+<line x1="12" x2="12" y1="8" y2="22"></line>
+<path d="M5 12H2a10 10 0 0 0 20 0h-3"></path>
+</svg>
+</div>
+<!-- Subtle Floating Dot Ring -->
+<div class="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-[#ECB22E] flex items-center justify-center border-2 border-[#4A154B] shadow-sm">
+<span class="material-symbols-outlined text-white text-[12px] font-bold" data-icon="lock">lock</span>
+</div>
+</div>
+<!-- 3. Blocked App Notification Header -->
+<div class="mt-7 space-y-2">
+<h1 class="font-display text-display text-white tracking-tight leading-tight">
+            Instagram is blocked
+          </h1>
+<p class="font-body text-[15px] leading-relaxed text-white/80 font-normal">
+            Morning Focus ends at 10:00 AM
+          </p>
+</div>
+<!-- Schedule Mode Chip -->
+<div class="mt-4 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/10 border border-white/10 backdrop-blur-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-[#ECB22E] animate-pulse"></span>
+<span class="font-caption text-[12px] uppercase tracking-wider font-bold text-white/90">Deep Work Protocol</span>
+</div>
+</div>
+<!-- Mid-Section: Motivational Reflection Card & Stat Badge -->
+<div class="w-full space-y-4 my-auto">
+<!-- 4. Motivational Reflection / Quote Card -->
+<article class="relative w-full rounded-2xl bg-white/10 border border-white/15 p-6 backdrop-blur-md shadow-lg flex flex-col justify-between">
+<!-- Quote Icon -->
+<div class="flex items-center justify-between mb-3">
+<svg class="w-7 h-7 text-[#ECB22E]" fill="currentColor" viewbox="0 0 24 24">
+<path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"></path>
+</svg>
+<span class="text-[11px] font-caption tracking-widest uppercase font-bold text-[#ECB22E]/80">Daily Prompt</span>
+</div>
+<!-- Verbatim Quote Text -->
+<blockquote class="font-body text-[16px] leading-[23px] text-white/95 font-medium tracking-normal mb-3">
+            “You will never change your life until you change something you do daily.”
+          </blockquote>
+<!-- Subtle Attribution -->
+<cite class="not-italic font-caption text-caption text-white/60 block text-right font-normal">
+            — John C. Maxwell
+          </cite>
+</article>
+<!-- 5. Resistance Milestone / Stat Line -->
+<div class="w-full flex items-center justify-center gap-2.5 py-3 px-4 rounded-xl bg-white/[0.07] border border-white/10 backdrop-blur-sm">
+<span class="material-symbols-outlined text-[#ECB22E] text-[20px]" data-icon="shield">shield</span>
+<p class="font-caption text-[14px] text-white/95 font-medium tracking-tight">
+            You have resisted <span class="font-bold text-[#ECB22E]">3 times</span> today
+          </p>
+</div>
+</div>
+<!-- 6. Bottom Action Controls (Friction-based Flow) -->
+<footer class="w-full flex flex-col items-center space-y-3 pb-3">
+<!-- Primary Action Button: Close App -->
+<button class="w-full py-4 rounded-full bg-surface text-[#4A154B] font-title text-[16px] font-bold tracking-tight shadow-md transition-all duration-150 active:scale-[0.98] active:bg-[#f6ebf0] flex items-center justify-center gap-2" onclick="handleCloseApp()" type="button">
+<span>Close app</span>
+<span class="material-symbols-outlined text-[18px] font-bold text-[#4A154B]" data-icon="arrow_outward">arrow_outward</span>
+</button>
+<!-- Secondary Action Button: Delay Friction Unlock -->
+<button class="w-full py-2.5 text-center font-label text-[14px] font-medium text-white/80 hover:text-white transition-colors duration-150 active:opacity-60 flex items-center justify-center gap-1.5" id="unlock-btn" onclick="handleUnlockAttempt(this)" type="button">
+<span class="material-symbols-outlined text-[16px] text-white/70" data-icon="hourglass_top">hourglass_top</span>
+<span id="unlock-label">Unlock for 5 min (1 left)</span>
+</button>
+</footer>
+</section>
+<!-- iOS Home Indicator Safe Area (~34px height) -->
+<div class="relative z-10 w-full h-[34px] flex items-center justify-center pb-2 pointer-events-none">
+<div class="w-[134px] h-[5px] rounded-full bg-white/40"></div>
+</div>
+</main>
+<script>
+    function handleCloseApp() {
+      // Gentle feedback trigger simulating system dismissal
+      window.close();
+    }
+
+    function handleUnlockAttempt(btn) {
+      const label = document.getElementById('unlock-label');
+      if (!btn.dataset.coolingDown) {
+        btn.dataset.coolingDown = "true";
+        label.textContent = "Take a breath (3s)...";
+        btn.classList.add('opacity-70');
+        
+        let counter = 3;
+        const interval = setInterval(() => {
+          counter--;
+          if (counter > 0) {
+            label.textContent = `Take a breath (${counter}s)...`;
+          } else {
+            clearInterval(interval);
+            label.textContent = "Unlock granted for 5 min";
+            btn.classList.remove('opacity-70');
+            btn.classList.add('text-[#ECB22E]');
+          }
+        }, 1000);
+      }
+    }
+  </script>
+</body></html>

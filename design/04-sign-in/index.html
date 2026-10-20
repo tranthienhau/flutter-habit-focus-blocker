@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Anchor - Sign In</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Gloock&amp;family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-variant": "#eae0e5",
+            "surface": "#FFFFFF",
+            "on-secondary-fixed": "#261900",
+            "secondary-container": "#ffc23e",
+            "surface-dim": "#e2d7dd",
+            "error-container": "#ffdad6",
+            "tertiary-fixed": "#dbe9a5",
+            "outline": "#80737d",
+            "secondary": "#7b5900",
+            "primary-fixed-dim": "#f6afef",
+            "on-surface-variant": "#4f434c",
+            "inverse-primary": "#f6afef",
+            "border": "#EADCEA",
+            "on-secondary": "#ffffff",
+            "tertiary-fixed-dim": "#bfcd8b",
+            "secondary-fixed": "#ffdea4",
+            "on-primary-fixed-variant": "#693168",
+            "surface-tint": "#844981",
+            "on-tertiary-fixed-variant": "#404b17",
+            "success": "#16A34A",
+            "tertiary": "#141a00",
+            "surface-container": "#f6ebf0",
+            "on-secondary-fixed-variant": "#5d4200",
+            "tertiary-container": "#263000",
+            "on-tertiary": "#ffffff",
+            "surface-container-highest": "#eae0e5",
+            "inverse-on-surface": "#f9eef3",
+            "on-primary": "#ffffff",
+            "surface-bright": "#fff7fa",
+            "primary-fixed": "#ffd6f8",
+            "on-secondary-container": "#705100",
+            "primary": "#300033",
+            "on-error": "#ffffff",
+            "surface-container-low": "#fcf1f6",
+            "primary-container": "#4a154b",
+            "outline-variant": "#d2c2cd",
+            "inverse-surface": "#352f33",
+            "danger": "#DC2626",
+            "text-primary": "#1E0C1F",
+            "on-tertiary-fixed": "#171e00",
+            "surface-container-high": "#f0e5eb",
+            "on-surface": "#1f1a1e",
+            "text-secondary": "#5E4A5F",
+            "accent-pressed": "#3F1240",
+            "on-background": "#1f1a1e",
+            "surface-container-lowest": "#ffffff",
+            "on-tertiary-container": "#8c995d",
+            "text-tertiary": "#8F7D90",
+            "secondary-fixed-dim": "#f8bd39",
+            "on-error-container": "#93000a",
+            "error": "#ba1a1a",
+            "on-primary-fixed": "#370139",
+            "accent-tint": "#E6DEE6",
+            "warning": "#D97706",
+            "background": "#FCF4FC",
+            "surface-alt": "#F7EEF7",
+            "on-primary-container": "#be7db9"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xl": "24px",
+            "margin": "20px",
+            "space-xs": "4px",
+            "space-md": "12px",
+            "space-2xl": "32px",
+            "space-sm": "8px",
+            "space-lg": "16px",
+            "gutter": "16px"
+          },
+          "fontFamily": {
+            "body": ["Lato", "sans-serif"],
+            "label": ["Lato", "sans-serif"],
+            "display": ["Gloock", "serif"],
+            "caption": ["Lato", "sans-serif"],
+            "title": ["Lato", "sans-serif"]
+          },
+          "fontSize": {
+            "body": ["16px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "label": ["14px", { "lineHeight": "18px", "fontWeight": "500" }],
+            "display": ["32px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "caption": ["13px", { "lineHeight": "16px", "fontWeight": "500" }],
+            "title": ["20px", { "lineHeight": "26px", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    /* iOS ambient card shadows */
+    .ios-card-shadow {
+      box-shadow: 0 1px 2px rgba(30, 12, 31, 0.04), 0 8px 24px rgba(30, 12, 31, 0.06);
+    }
+    /* Subtle custom touch reaction */
+    .btn-active:active {
+      transform: scale(0.985);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-[#FCF4FC] text-text-primary font-body antialiased selection:bg-primary-container selection:text-surface min-h-screen flex justify-center items-center p-0 md:py-8">
+<!-- Mobile Screen Frame (393x852 iOS Frame) -->
+<main class="w-full max-w-[393px] h-[852px] bg-background relative flex flex-col justify-between overflow-hidden md:rounded-[48px] md:ring-1 md:ring-border/80 md:shadow-[0_24px_64px_rgba(30,12,31,0.12)]">
+<!-- Top Safe Area Bar (Simulated iPhone Status Area) -->
+<header class="w-full pt-3 px-6 flex justify-between items-center text-text-primary z-20">
+<span class="text-caption font-bold tracking-tight text-text-primary">9:41</span>
+<div class="flex items-center space-x-2 text-text-primary">
+<span class="material-symbols-outlined text-[15px]" data-icon="signal_cellular_alt">signal_cellular_alt</span>
+<span class="material-symbols-outlined text-[15px]" data-icon="wifi">wifi</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="battery_full">battery_full</span>
+</div>
+</header>
+<!-- Top Navigation Anchor (Shared TopAppBar Implementation adapted for Onboarding) -->
+<nav class="docked full-width top-0 pt-safe flex justify-between items-center w-full px-margin h-14 z-20">
+<!-- Back Chevron -->
+<button aria-label="Go back" class="w-9 h-9 flex items-center justify-start text-text-primary dark:text-primary-fixed hover:opacity-80 transition-opacity active:scale-95 duration-150" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="arrow_back_ios_new">arrow_back_ios_new</span>
+</button>
+<!-- Step Indicator & Progress Track -->
+<div class="flex flex-col items-center justify-center gap-1.5">
+<span class="font-title text-caption font-semibold tracking-wider uppercase text-text-secondary">
+          Step 4 of 4
+        </span>
+<!-- 4-Segment Progress Bar (100% Complete) -->
+<div class="flex items-center gap-1 w-24">
+<div class="h-1 flex-1 rounded-full bg-primary-container"></div>
+<div class="h-1 flex-1 rounded-full bg-primary-container"></div>
+<div class="h-1 flex-1 rounded-full bg-primary-container"></div>
+<div class="h-1 flex-1 rounded-full bg-primary-container"></div>
+</div>
+</div>
+<!-- Trailing Action: Skip -->
+<button class="w-9 h-9 flex items-center justify-end font-label text-label font-semibold text-text-secondary hover:opacity-80 transition-opacity active:scale-95 duration-150" type="button">
+        Skip
+      </button>
+</nav>
+<!-- Scrollable Content Canvas -->
+<div class="flex-1 px-margin flex flex-col justify-between overflow-y-auto no-scrollbar py-2 z-10">
+<!-- Hero Section -->
+<section class="flex flex-col items-center text-center mt-2">
+<!-- App Mark Badge -->
+<div class="relative w-14 h-14 rounded-2xl bg-gradient-to-b from-primary-container to-[#6B2A5E] flex items-center justify-center shadow-[0_4px_16px_rgba(74,21,75,0.22)] mb-5">
+<!-- Tactile Vector Anchor Icon -->
+<svg class="w-7 h-7 text-[#ECB22E]" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<circle cx="12" cy="5" r="3"></circle>
+<line x1="12" x2="12" y1="22" y2="8"></line>
+<path d="M5 12H2a10 10 0 0 0 20 0h-3"></path>
+</svg>
+<div class="absolute inset-0 rounded-2xl border border-white/20 pointer-events-none"></div>
+</div>
+<!-- Serif Headline in Gloock -->
+<h1 class="font-display text-display text-text-primary tracking-tight mb-2">
+          Save your streaks
+        </h1>
+<!-- Subtitle in Lato -->
+<p class="font-body text-body text-text-secondary max-w-[280px]">
+          Sync habits and blocks across your devices seamlessly.
+        </p>
+<!-- Subtle Trust Pill -->
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface/80 border border-border mt-4 ios-card-shadow">
+<span class="material-symbols-outlined text-[#ECB22E] text-[16px]" data-icon="lock" style="font-variation-settings: 'FILL' 1;">lock</span>
+<span class="font-caption text-caption text-text-secondary font-medium">End-to-end encrypted iCloud sync</span>
+</div>
+</section>
+<!-- Auth Form Stack (Bento/Card Tactile Architecture) -->
+<section class="flex flex-col gap-3 my-auto pt-6">
+<!-- 1. Apple SSO Button -->
+<button class="btn-active w-full h-[52px] bg-black text-white rounded-full flex items-center justify-center gap-3 px-6 shadow-sm hover:opacity-95 transition-all" type="button">
+<svg class="w-5 h-5 fill-current" viewbox="0 0 170 170">
+<path d="M150.37 130.25c-2.45 5.66-5.35 10.87-8.71 15.66-4.58 6.53-8.33 11.05-11.22 13.56-4.48 4.12-9.28 6.23-14.42 6.35-3.69 0-8.14-1.05-13.32-3.18-5.19-2.12-9.97-3.17-14.34-3.17-4.58 0-9.49 1.05-14.75 3.17-5.26 2.13-9.5 3.24-12.74 3.35-4.35.13-9.16-1.9-14.42-6.08-3.69-3.08-7.7-7.92-12.02-14.51-6.14-9.36-11.03-19.8-14.67-31.33-3.64-11.53-5.46-22.38-5.46-32.54 0-14.28 3.69-25.84 11.08-34.68 7.39-8.84 16.63-13.37 27.72-13.6 4.8.12 10.09 1.34 15.86 3.67 5.78 2.33 9.49 3.56 11.13 3.68 2.05-.12 6.01-1.47 11.89-4.04 5.88-2.57 11.09-3.71 15.64-3.41 12.07.72 21.84 5.25 29.3 13.6-10.51 6.39-15.67 15.35-15.48 26.89.19 8.97 3.57 16.54 10.15 22.7 6.58 6.16 14.49 9.77 23.73 10.83-2.3 7.15-5.34 14.73-9.12 22.74zm-28.74-106.87c.12-3.46-.72-7.14-2.53-11.05-1.81-3.91-4.48-7.24-8.01-9.99-4.22 3.12-7.71 7.13-10.47 12.03-2.76 4.9-3.99 9.69-3.68 14.37.59.12 1.4.19 2.43.21 2.92 0 6.63-1.07 11.13-3.21 4.5-2.14 8.21-5.26 11.13-9.36z"></path>
+</svg>
+<span class="font-label text-label font-semibold tracking-tight">Continue with Apple</span>
+</button>
+<!-- 2. Google SSO Button -->
+<button class="btn-active w-full h-[52px] bg-surface text-text-primary border border-border rounded-full flex items-center justify-center gap-3 px-6 ios-card-shadow hover:bg-surface-bright transition-all" type="button">
+<svg class="w-5 h-5" viewbox="0 0 24 24">
+<path d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.8-2.4 3.65v3.03h3.88c2.27-2.09 3.66-5.17 3.66-9.12z" fill="#4285F4"></path>
+<path d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.03c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.13C3.27 21.44 7.35 24 12 24z" fill="#34A853"></path>
+<path d="M5.28 14.29c-.25-.72-.38-1.49-.38-2.29s.13-1.57.38-2.29V6.58H1.25C.45 8.18 0 9.99 0 12s.45 3.82 1.25 5.42l4.03-3.13z" fill="#FBBC05"></path>
+<path d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.35 0 3.27 2.56 1.25 6.58l4.03 3.13c.95-2.83 3.6-4.96 6.72-4.96z" fill="#EA4335"></path>
+</svg>
+<span class="font-label text-label font-semibold tracking-tight">Continue with Google</span>
+</button>
+<!-- Divider with Centered Pill -->
+<div class="relative flex py-2 items-center">
+<div class="flex-grow border-t border-border"></div>
+<span class="flex-shrink mx-3 px-3 py-0.5 rounded-full bg-surface-variant/60 text-text-tertiary font-label text-caption font-medium tracking-wide lowercase">or</span>
+<div class="flex-grow border-t border-border"></div>
+</div>
+<!-- 3. Email Input & Submit Stack -->
+<form class="flex flex-col gap-3" onsubmit="event.preventDefault();">
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-4 text-text-tertiary text-[20px]" data-icon="mail">mail</span>
+<input class="w-full h-[52px] pl-11 pr-4 bg-surface rounded-2xl border border-border text-text-primary placeholder:text-text-tertiary font-body text-body ios-card-shadow focus:border-primary-container focus:ring-1 focus:ring-primary-container focus:outline-none transition-all" name="email" placeholder="you@email.com" type="email"/>
+</div>
+<button class="btn-active w-full h-[54px] bg-primary-container text-surface rounded-full font-label text-label font-semibold tracking-wide flex items-center justify-center shadow-[0_4px_16px_rgba(74,21,75,0.25)] hover:bg-accent-pressed active:bg-primary transition-all" type="submit">
+            Continue with email
+          </button>
+</form>
+</section>
+<!-- Legal Footer & Home Indicator Space -->
+<footer class="mt-4 mb-2 text-center flex flex-col items-center">
+<p class="font-caption text-caption text-text-secondary leading-relaxed max-w-[310px]">
+          By continuing you agree to the 
+          <a class="text-primary-container font-semibold underline decoration-primary-container/40 hover:decoration-primary-container transition-all" href="#">Terms</a> 
+          and 
+          <a class="text-primary-container font-semibold underline decoration-primary-container/40 hover:decoration-primary-container transition-all" href="#">Privacy Policy</a>.
+        </p>
+<!-- iOS Home Indicator Clearance (34px safe area) -->
+<div class="w-full h-8 flex items-center justify-center pt-2">
+<div class="w-32 h-1 bg-text-primary/20 rounded-full"></div>
+</div>
+</footer>
+</div>
+</main>
+</body></html>

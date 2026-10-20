@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Anchor - Profile &amp; Settings</title>
+<!-- Google Fonts: Gloock & Lato -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Gloock&amp;family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "accent-pressed": "#3F1240",
+            "surface-variant": "#eae0e5",
+            "surface-dim": "#e2d7dd",
+            "error-container": "#ffdad6",
+            "secondary-fixed-dim": "#f8bd39",
+            "on-error": "#ffffff",
+            "tertiary": "#141a00",
+            "surface-tint": "#844981",
+            "surface-container-high": "#f0e5eb",
+            "secondary-container": "#ffc23e",
+            "text-tertiary": "#8F7D90",
+            "surface": "#FFFFFF",
+            "primary": "#300033",
+            "border": "#EADCEA",
+            "secondary": "#7b5900",
+            "surface-container": "#f6ebf0",
+            "surface-alt": "#F7EEF7",
+            "surface-container-lowest": "#ffffff",
+            "on-surface": "#1f1a1e",
+            "on-secondary-container": "#705100",
+            "on-primary-fixed": "#370139",
+            "accent-tint": "#E6DEE6",
+            "primary-container": "#4a154b",
+            "tertiary-fixed": "#dbe9a5",
+            "outline": "#80737d",
+            "on-tertiary-container": "#8c995d",
+            "surface-bright": "#fff7fa",
+            "surface-container-low": "#fcf1f6",
+            "on-secondary-fixed": "#261900",
+            "primary-fixed-dim": "#f6afef",
+            "inverse-surface": "#352f33",
+            "on-secondary-fixed-variant": "#5d4200",
+            "on-error-container": "#93000a",
+            "text-primary": "#1E0C1F",
+            "on-primary-fixed-variant": "#693168",
+            "error": "#ba1a1a",
+            "surface-container-highest": "#eae0e5",
+            "on-secondary": "#ffffff",
+            "on-primary-container": "#be7db9",
+            "tertiary-fixed-dim": "#bfcd8b",
+            "danger": "#DC2626",
+            "outline-variant": "#d2c2cd",
+            "text-secondary": "#5E4A5F",
+            "warning": "#D97706",
+            "success": "#16A34A",
+            "secondary-fixed": "#ffdea4",
+            "on-tertiary-fixed": "#171e00",
+            "background": "#FCF4FC",
+            "on-primary": "#ffffff",
+            "inverse-primary": "#f6afef",
+            "tertiary-container": "#263000",
+            "on-tertiary-fixed-variant": "#404b17",
+            "inverse-on-surface": "#f9eef3",
+            "on-tertiary": "#ffffff",
+            "on-background": "#1f1a1e",
+            "primary-fixed": "#ffd6f8",
+            "on-surface-variant": "#4f434c"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "2xl": "1.25rem",
+            "3xl": "1.5rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xs": "4px",
+            "space-sm": "8px",
+            "space-lg": "16px",
+            "margin": "20px",
+            "space-md": "12px",
+            "space-xl": "24px",
+            "space-2xl": "32px",
+            "gutter": "16px"
+          },
+          "fontFamily": {
+            "label": ["Lato", "sans-serif"],
+            "display": ["Gloock", "serif"],
+            "caption": ["Lato", "sans-serif"],
+            "title": ["Gloock", "serif"],
+            "body": ["Lato", "sans-serif"]
+          },
+          "fontSize": {
+            "label": ["14px", { "lineHeight": "18px", "fontWeight": "500" }],
+            "display": ["30px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "caption": ["13px", { "lineHeight": "16px", "fontWeight": "500" }],
+            "title": ["20px", { "lineHeight": "26px", "fontWeight": "600" }],
+            "body": ["15px", { "lineHeight": "20px", "fontWeight": "400" }]
+          },
+          "boxShadow": {
+            "ios-card": "0 1px 2px rgba(30,12,31,0.04), 0 8px 24px rgba(30,12,31,0.05)",
+            "glow": "0 10px 25px -5px rgba(74, 21, 75, 0.35)"
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    /* Hide scrollbar for clean native feel */
+    ::-webkit-scrollbar {
+      display: none;
+    }
+    body {
+      -webkit-font-smoothing: antialiased;
+      -webkit-tap-highlight-color: transparent;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface antialiased flex justify-center min-h-screen select-none">
+<!-- iPhone Canvas Frame (393px viewport) -->
+<div class="w-full max-w-[393px] min-h-screen bg-background relative flex flex-col pb-28 shadow-2xl">
+<!-- iOS Dynamic Island & Status Bar Shell -->
+<header class="sticky top-0 z-50 bg-background/90 backdrop-blur-md">
+<!-- Status Bar Elements -->
+<div class="h-[44px] px-7 flex items-center justify-between text-text-primary text-[14px] font-semibold tracking-tight">
+<span>9:41</span>
+<!-- Dynamic Island pill representation -->
+<div class="w-28 h-6 bg-text-primary rounded-full mx-auto self-center -mr-2"></div>
+<div class="flex items-center space-x-1.5 text-text-primary">
+<span class="material-symbols-outlined text-[17px] leading-none">signal_cellular_4_bar</span>
+<span class="material-symbols-outlined text-[17px] leading-none">wifi</span>
+<span class="material-symbols-outlined text-[19px] leading-none">battery_full</span>
+</div>
+</div>
+<!-- TopAppBar (From Shared Components: small_center_aligned) -->
+<div class="flex items-center justify-between px-margin py-2">
+<button aria-label="Go back" class="w-9 h-9 rounded-full flex items-center justify-center text-text-primary active:scale-95 transition-transform duration-150 hover:bg-surface-variant/40" type="button">
+<span class="material-symbols-outlined text-[20px]">arrow_back_ios_new</span>
+</button>
+<h1 class="font-title text-title text-text-primary font-bold tracking-tight">Profile</h1>
+<button aria-label="Settings" class="w-9 h-9 rounded-full flex items-center justify-center text-text-primary active:scale-95 transition-transform duration-150 hover:bg-surface-variant/40" type="button">
+<span class="material-symbols-outlined text-[22px]">settings</span>
+</button>
+</div>
+</header>
+<!-- Scrollable Content Canvas -->
+<main class="flex-1 px-margin pt-2 space-y-5">
+<!-- Profile Header Section -->
+<section class="flex flex-col items-center text-center pt-2">
+<!-- Avatar with Edit Badge -->
+<div class="relative group cursor-pointer active:scale-95 transition-transform duration-150">
+<div class="w-[92px] h-[92px] rounded-full p-1 bg-gradient-to-tr from-[#ECB22E] via-primary-container to-surface-variant shadow-md">
+<img alt="Maya Chen" class="w-full h-full rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1Ueu2YRgsNNdip-4ihPnjgpLIRAfvXjWQlnwZcOUxkINFnEzzSfh2mYQn3TGOktda4mCq4ma6Y70tJhUXfL9TuAh2mhDGj04lO3pHZK3ZG_SM1KLmMiHiL5dy_j0RQoCBly9kwCPv6x8ENcQvdz4YUMJ9KqFNGAiRCX8uTBeoibu3qeqYSVBktiOgleuC2a6bpfM-f8DO7PTy1efCsoRJLLjchAAEANViIWiCPVNafeNcCPUDsliHLKtwo"/>
+</div>
+<!-- Edit pencil badge -->
+<div class="absolute bottom-0 right-0 w-7 h-7 bg-primary text-on-primary rounded-full flex items-center justify-center shadow-md border-2 border-surface">
+<span class="material-symbols-outlined text-[14px]">edit</span>
+</div>
+</div>
+<!-- Name & Member Metadata -->
+<h2 class="mt-3 font-display text-display text-text-primary tracking-normal">Maya Chen</h2>
+<p class="font-body text-caption text-text-secondary mt-0.5">Member since Aug 2026</p>
+<!-- Quick Stats Pill Bar -->
+<div class="mt-4 px-4 py-2 bg-surface/80 border border-border/80 rounded-full shadow-ios-card flex items-center justify-center space-x-2 text-caption font-label text-text-primary">
+<span class="text-amber-500 font-bold">🔥 23</span>
+<span class="text-text-secondary">day streak</span>
+<span class="text-text-tertiary text-[10px]">•</span>
+<span class="font-bold text-primary">164</span>
+<span class="text-text-secondary">done</span>
+<span class="text-text-tertiary text-[10px]">•</span>
+<span class="font-bold text-primary">14h</span>
+<span class="text-text-secondary">focused</span>
+</div>
+</section>
+<!-- Anchor Pro Hero Subscription Card -->
+<section class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#4A154B] to-[#6B2A5E] p-5 text-on-primary shadow-glow transition-all active:scale-[0.99]">
+<!-- Subtle warm gold ambient reflection behind top right -->
+<div class="absolute -top-12 -right-12 w-32 h-32 bg-[#ECB22E]/20 rounded-full blur-2xl pointer-events-none"></div>
+<div class="relative z-10">
+<!-- Top Row: Icon + Title + Yearly Pill Badge -->
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-3">
+<!-- Anchor icon in gold circle -->
+<div class="w-10 h-10 rounded-full bg-[#ECB22E] flex items-center justify-center text-text-primary shadow-sm">
+<span class="material-symbols-outlined text-[22px]" style="font-variation-settings: 'FILL' 1;">anchor</span>
+</div>
+<div class="flex flex-col text-left">
+<span class="font-display text-[22px] font-bold text-surface tracking-wide leading-none">Anchor Pro</span>
+<span class="text-caption font-label text-surface-variant/80 mt-1">Renews Aug 12, 2027</span>
+</div>
+</div>
+<div class="bg-secondary-container px-2.5 py-0.5 rounded-full shadow-sm">
+<span class="text-[11px] font-black tracking-wider text-text-primary">YEARLY</span>
+</div>
+</div>
+<!-- Hairline Divider -->
+<div class="my-3.5 h-[1px] w-full bg-white/15"></div>
+<!-- Bottom Row: Features & Manage link -->
+<div class="flex items-center justify-between text-caption font-label">
+<span class="text-surface-variant/90 font-medium">Unlimited blocks &amp; sync</span>
+<button class="text-secondary-container hover:text-white font-bold flex items-center transition-colors" type="button">
+              Manage subscription <span class="material-symbols-outlined text-[16px] ml-0.5">chevron_right</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Grouped Settings List -->
+<div class="space-y-4">
+<!-- Group 1: Core App & Permissions -->
+<div class="bg-surface rounded-2xl shadow-ios-card overflow-hidden">
+<!-- Item 1: Reminders -->
+<div class="flex items-center justify-between px-4 py-3.5 hover:bg-surface-container-low transition-colors cursor-pointer active:bg-surface-variant/20">
+<div class="flex items-center space-x-3.5">
+<div class="w-8 h-8 rounded-lg bg-surface-alt flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+</div>
+<span class="font-label text-body text-text-primary font-medium">Reminders</span>
+</div>
+<span class="material-symbols-outlined text-text-tertiary text-[20px]">chevron_right</span>
+</div>
+<div class="h-[1px] bg-border ml-16 mr-4"></div>
+<!-- Item 2: Screen Time permission -->
+<div class="flex items-center justify-between px-4 py-3.5 hover:bg-surface-container-low transition-colors cursor-pointer active:bg-surface-variant/20">
+<div class="flex items-center space-x-3.5">
+<div class="w-8 h-8 rounded-lg bg-surface-alt flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[20px]">shield</span>
+</div>
+<span class="font-label text-body text-text-primary font-medium">Screen Time permission</span>
+</div>
+<div class="flex items-center space-x-1.5">
+<span class="px-2.5 py-0.5 rounded-full bg-emerald-50 text-success text-[12px] font-bold">Granted</span>
+<span class="material-symbols-outlined text-text-tertiary text-[20px]">chevron_right</span>
+</div>
+</div>
+<div class="h-[1px] bg-border ml-16 mr-4"></div>
+<!-- Item 3: Home screen widgets -->
+<div class="flex items-center justify-between px-4 py-3.5 hover:bg-surface-container-low transition-colors cursor-pointer active:bg-surface-variant/20">
+<div class="flex items-center space-x-3.5">
+<div class="w-8 h-8 rounded-lg bg-surface-alt flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[20px]">widgets</span>
+</div>
+<span class="font-label text-body text-text-primary font-medium">Home screen widgets</span>
+</div>
+<span class="material-symbols-outlined text-text-tertiary text-[20px]">chevron_right</span>
+</div>
+<div class="h-[1px] bg-border ml-16 mr-4"></div>
+<!-- Item 4: Apple Health sync (Interactive Toggle) -->
+<div class="flex items-center justify-between px-4 py-3.5">
+<div class="flex items-center space-x-3.5">
+<div class="w-8 h-8 rounded-lg bg-surface-alt flex items-center justify-center text-[#DC2626]">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</div>
+<span class="font-label text-body text-text-primary font-medium">Apple Health sync</span>
+</div>
+<!-- iOS Toggle (ON state) -->
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-variant rounded-full peer peer-checked:bg-primary-container transition-colors duration-200">
+<div class="w-5 h-5 bg-white rounded-full shadow-sm transform transition-transform duration-200 translate-x-0.5 translate-y-0.5 peer-checked:translate-x-[22px]"></div>
+</div>
+</label>
+</div>
+</div>
+<!-- Group 2: Preferences & Support -->
+<div class="bg-surface rounded-2xl shadow-ios-card overflow-hidden">
+<!-- Item 5: Appearance -->
+<div class="flex items-center justify-between px-4 py-3.5 hover:bg-surface-container-low transition-colors cursor-pointer active:bg-surface-variant/20">
+<div class="flex items-center space-x-3.5">
+<div class="w-8 h-8 rounded-lg bg-surface-alt flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[20px]">palette</span>
+</div>
+<span class="font-label text-body text-text-primary font-medium">Appearance</span>
+</div>
+<div class="flex items-center space-x-1.5">
+<span class="text-caption font-body text-text-tertiary">System theme</span>
+<span class="material-symbols-outlined text-text-tertiary text-[20px]">chevron_right</span>
+</div>
+</div>
+<div class="h-[1px] bg-border ml-16 mr-4"></div>
+<!-- Item 6: Export data -->
+<div class="flex items-center justify-between px-4 py-3.5 hover:bg-surface-container-low transition-colors cursor-pointer active:bg-surface-variant/20">
+<div class="flex items-center space-x-3.5">
+<div class="w-8 h-8 rounded-lg bg-surface-alt flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[20px]">download</span>
+</div>
+<span class="font-label text-body text-text-primary font-medium">Export data</span>
+</div>
+<span class="material-symbols-outlined text-text-tertiary text-[20px]">chevron_right</span>
+</div>
+<div class="h-[1px] bg-border ml-16 mr-4"></div>
+<!-- Item 7: Help and feedback -->
+<div class="flex items-center justify-between px-4 py-3.5 hover:bg-surface-container-low transition-colors cursor-pointer active:bg-surface-variant/20">
+<div class="flex items-center space-x-3.5">
+<div class="w-8 h-8 rounded-lg bg-surface-alt flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[20px]">help</span>
+</div>
+<span class="font-label text-body text-text-primary font-medium">Help and feedback</span>
+</div>
+<span class="material-symbols-outlined text-text-tertiary text-[20px]">chevron_right</span>
+</div>
+</div>
+<!-- Group 3: Account & Destructive Actions -->
+<div class="bg-surface rounded-2xl shadow-ios-card overflow-hidden">
+<button class="w-full flex items-center justify-center space-x-2 py-3.5 px-4 text-danger font-label font-semibold text-body hover:bg-error-container/20 active:bg-error-container/40 transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">logout</span>
+<span>Sign out</span>
+</button>
+</div>
+<!-- App Footprint Information -->
+<div class="text-center pt-1 pb-4">
+<p class="font-caption text-[12px] text-text-tertiary tracking-normal">
+            Anchor v2.4.1 (build 182) • Made with discipline
+          </p>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Strictly mapped from Shared Components JSON) -->
+<!-- Destination count: 5 | Order: Today, Focus, Blocks, Insights, Profile -->
+<nav class="fixed bottom-0 left-0 right-0 max-w-[393px] mx-auto z-50 bg-surface/95 backdrop-blur-lg border-t border-border flex justify-around items-center px-gutter pt-space-sm pb-8 shadow-lg">
+<!-- Tab 1: Today (inactive) -->
+<button class="flex flex-col items-center justify-center text-text-secondary active:scale-95 transition-transform duration-150" type="button">
+<span class="material-symbols-outlined text-[24px]">check_circle</span>
+<span class="font-caption text-caption mt-1">Today</span>
+</button>
+<!-- Tab 2: Focus (inactive) -->
+<button class="flex flex-col items-center justify-center text-text-secondary active:scale-95 transition-transform duration-150" type="button">
+<span class="material-symbols-outlined text-[24px]">timer</span>
+<span class="font-caption text-caption mt-1">Focus</span>
+</button>
+<!-- Tab 3: Blocks (inactive) -->
+<button class="flex flex-col items-center justify-center text-text-secondary active:scale-95 transition-transform duration-150" type="button">
+<span class="material-symbols-outlined text-[24px]">shield</span>
+<span class="font-caption text-caption mt-1">Blocks</span>
+</button>
+<!-- Tab 4: Insights (inactive) -->
+<button class="flex flex-col items-center justify-center text-text-secondary active:scale-95 transition-transform duration-150" type="button">
+<span class="material-symbols-outlined text-[24px]">bar_chart</span>
+<span class="font-caption text-caption mt-1">Insights</span>
+</button>
+<!-- Tab 5: Profile (ACTIVE state with gold dot) -->
+<button class="flex flex-col items-center justify-center text-primary relative after:w-1 after:h-1 after:bg-secondary-container after:rounded-full after:mt-1 active:scale-95 transition-transform duration-150 font-bold" type="button">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="font-caption text-caption mt-1">Profile</span>
+</button>
+</nav>
+<!-- iOS Home Indicator bar for standard mobile frame clearance -->
+<div class="fixed bottom-1.5 left-1/2 -translate-x-1/2 w-36 h-1 bg-text-primary/20 rounded-full z-[60] pointer-events-none"></div>
+</div>
+</body></html>

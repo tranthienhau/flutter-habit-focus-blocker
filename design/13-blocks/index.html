@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Anchor Blocks</title>
+<!-- Google Fonts: Gloock & Lato -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Gloock&amp;family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "error": "#ba1a1a",
+            "secondary-container": "#ffc23e",
+            "inverse-primary": "#f6afef",
+            "on-primary-fixed": "#370139",
+            "inverse-surface": "#352f33",
+            "text-primary": "#1E0C1F",
+            "surface-container-low": "#fcf1f6",
+            "on-secondary-fixed": "#261900",
+            "on-primary-container": "#be7db9",
+            "secondary-fixed-dim": "#f8bd39",
+            "on-secondary": "#ffffff",
+            "surface-container": "#f6ebf0",
+            "surface-variant": "#eae0e5",
+            "secondary": "#7b5900",
+            "surface-dim": "#e2d7dd",
+            "on-error": "#ffffff",
+            "on-primary": "#ffffff",
+            "text-secondary": "#5E4A5F",
+            "on-tertiary-fixed-variant": "#404b17",
+            "surface-container-high": "#f0e5eb",
+            "secondary-fixed": "#ffdea4",
+            "outline": "#80737d",
+            "on-primary-fixed-variant": "#693168",
+            "on-secondary-fixed-variant": "#5d4200",
+            "tertiary-fixed-dim": "#bfcd8b",
+            "tertiary-container": "#263000",
+            "background": "#FCF4FC",
+            "primary-fixed": "#ffd6f8",
+            "surface-container-highest": "#eae0e5",
+            "tertiary": "#141a00",
+            "primary-fixed-dim": "#f6afef",
+            "on-surface-variant": "#4f434c",
+            "primary-container": "#4a154b",
+            "surface-bright": "#fff7fa",
+            "on-surface": "#1f1a1e",
+            "outline-variant": "#d2c2cd",
+            "accent-tint": "#E6DEE6",
+            "accent-pressed": "#3F1240",
+            "text-tertiary": "#8F7D90",
+            "danger": "#DC2626",
+            "surface-container-lowest": "#ffffff",
+            "on-tertiary": "#ffffff",
+            "surface": "#FFFFFF",
+            "primary": "#300033",
+            "surface-tint": "#844981",
+            "on-tertiary-fixed": "#171e00",
+            "on-tertiary-container": "#8c995d",
+            "tertiary-fixed": "#dbe9a5",
+            "on-background": "#1f1a1e",
+            "warning": "#D97706",
+            "on-error-container": "#93000a",
+            "on-secondary-container": "#705100",
+            "surface-alt": "#F7EEF7",
+            "error-container": "#ffdad6",
+            "border": "#EADCEA",
+            "inverse-on-surface": "#f9eef3",
+            "success": "#16A34A"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "2xl": "1.25rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin": "20px",
+            "space-xl": "24px",
+            "gutter": "16px",
+            "space-xs": "4px",
+            "space-md": "12px",
+            "space-lg": "16px",
+            "space-2xl": "32px",
+            "space-sm": "8px"
+          },
+          "fontFamily": {
+            "display": ["Gloock", "serif"],
+            "body": ["Lato", "sans-serif"],
+            "label": ["Lato", "sans-serif"],
+            "caption": ["Lato", "sans-serif"],
+            "title": ["Lato", "sans-serif"]
+          },
+          "fontSize": {
+            "display": [
+              "32px",
+              {
+                "lineHeight": "38px",
+                "letterSpacing": "-0.02em",
+                "fontWeight": "700"
+              }
+            ],
+            "body": [
+              "16px",
+              {
+                "lineHeight": "22px",
+                "fontWeight": "400"
+              }
+            ],
+            "label": [
+              "14px",
+              {
+                "lineHeight": "18px",
+                "fontWeight": "500"
+              }
+            ],
+            "caption": [
+              "13px",
+              {
+                "lineHeight": "16px",
+                "fontWeight": "500"
+              }
+            ],
+            "title": [
+              "20px",
+              {
+                "lineHeight": "26px",
+                "fontWeight": "600"
+              }
+            ]
+          },
+          "boxShadow": {
+            "soft-card": "0 1px 2px rgba(30,12,31,.04), 0 8px 24px rgba(30,12,31,.06)",
+            "subtle-tab": "0 -1px 3px rgba(30,12,31,0.04)"
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      font-size: 24px;
+      line-height: 1;
+      display: inline-block;
+    }
+    /* iOS Custom smooth toggle */
+    .ios-switch {
+      position: relative;
+      width: 48px;
+      height: 28px;
+    }
+    .ios-switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: #E6DEE6;
+      transition: .25s ease-in-out;
+      border-radius: 9999px;
+    }
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 22px;
+      width: 22px;
+      left: 3px;
+      bottom: 3px;
+      background-color: white;
+      transition: .25s ease-in-out;
+      border-radius: 50%;
+      box-shadow: 0 1px 3px rgba(30,12,31,0.18);
+    }
+    input:checked + .slider {
+      background-color: #4A154B;
+    }
+    input:checked + .slider:before {
+      transform: translateX(20px);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-text-primary font-body antialiased selection:bg-primary-container selection:text-white flex justify-center min-h-screen">
+<!-- Mobile Viewport Frame (393px width simulated iOS container) -->
+<div class="w-full max-w-[393px] min-h-screen bg-background relative flex flex-col pb-28">
+<!-- Top Safe Area Space & Status Bar Simulated Clearance -->
+<div class="h-10 w-full shrink-0"></div>
+<!-- TopAppBar from Shared Components Specification -->
+<header class="flex justify-between items-center w-full px-5 h-14 bg-background z-20">
+<div class="flex items-center gap-3">
+<button aria-label="Go Back" class="w-9 h-9 rounded-full flex items-center justify-center text-text-primary hover:bg-surface-container active:scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined text-text-primary" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-display text-[28px] leading-tight text-text-primary tracking-tight font-bold">Blocks</h1>
+</div>
+<button aria-label="Add block or limit" class="w-9 h-9 rounded-full bg-surface shadow-sm border border-border flex items-center justify-center text-primary-container hover:bg-surface-container active:scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined text-primary-container font-medium" data-icon="add">add</span>
+</button>
+</header>
+<!-- Main Scrollable Canvas -->
+<main class="flex-1 px-5 pt-3 space-y-6">
+<!-- Focal Hero Card: Screen time today -->
+<section class="bg-surface rounded-2xl p-5 shadow-soft-card border border-border/40 relative overflow-hidden">
+<div class="flex justify-between items-start mb-2">
+<span class="font-caption text-caption text-text-secondary font-medium tracking-wide">Screen time today</span>
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-low text-text-secondary font-caption text-xs">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-container"></span>
+<span>2h 00m limit</span>
+</div>
+</div>
+<div class="flex items-baseline justify-between mt-1 mb-4">
+<div class="flex items-baseline gap-2">
+<span class="font-display text-[38px] leading-none text-primary-container tracking-tight">1h 52m</span>
+<span class="font-caption text-caption text-text-tertiary">used</span>
+</div>
+<div class="flex items-center text-success font-caption text-caption font-semibold bg-success/10 px-2 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-sm mr-0.5 text-success" data-icon="arrow_downward" style="font-size: 15px;">arrow_downward</span>
+<span>48 min less</span>
+</div>
+</div>
+<!-- Progress Gauge Bar: ~93% Auburn/Gold Track -->
+<div class="w-full bg-surface-variant/70 h-2.5 rounded-full overflow-hidden p-0.5">
+<div class="h-full rounded-full bg-gradient-to-r from-primary-container to-secondary-container transition-all duration-500" style="width: 93%;"></div>
+</div>
+<div class="flex justify-between items-center mt-2.5">
+<span class="font-caption text-caption text-text-tertiary">93% of daily cap</span>
+<span class="font-caption text-caption text-text-secondary font-semibold">8 min remaining</span>
+</div>
+</section>
+<!-- Schedules Section -->
+<section class="space-y-3">
+<div class="flex justify-between items-center px-1">
+<div class="flex items-center gap-2">
+<h2 class="font-title text-base font-bold text-text-primary">Schedules</h2>
+<span class="px-2 py-0.5 text-xs font-semibold rounded-full bg-surface-container text-text-secondary">3 active</span>
+</div>
+<button class="font-caption text-caption text-text-secondary hover:text-primary-container transition-colors">Edit</button>
+</div>
+<div class="space-y-2.5">
+<!-- Schedule Card 1 -->
+<div class="bg-surface rounded-2xl p-4 shadow-soft-card border border-border/40 flex items-center justify-between transition-all">
+<div class="space-y-1 pr-2">
+<div class="flex items-center gap-2">
+<span class="font-title text-base font-semibold text-text-primary">Morning Focus</span>
+<span class="bg-[#ECB22E] text-text-primary text-[11px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">Active now</span>
+</div>
+<p class="font-caption text-caption text-text-secondary">6:00 – 10:00 AM · Weekdays</p>
+</div>
+<label class="ios-switch shrink-0">
+<input checked="" type="checkbox"/>
+<span class="slider"></span>
+</label>
+</div>
+<!-- Schedule Card 2 -->
+<div class="bg-surface rounded-2xl p-4 shadow-soft-card border border-border/40 flex items-center justify-between transition-all">
+<div class="space-y-1 pr-2">
+<h3 class="font-title text-base font-semibold text-text-primary">Work Hours</h3>
+<p class="font-caption text-caption text-text-secondary">9:00 AM – 5:00 PM · Mon–Fri</p>
+</div>
+<label class="ios-switch shrink-0">
+<input checked="" type="checkbox"/>
+<span class="slider"></span>
+</label>
+</div>
+<!-- Schedule Card 3 -->
+<div class="bg-surface rounded-2xl p-4 shadow-soft-card border border-border/40 flex items-center justify-between transition-all">
+<div class="space-y-1 pr-2">
+<h3 class="font-title text-base font-semibold text-text-primary">Wind Down</h3>
+<p class="font-caption text-caption text-text-secondary">10:00 PM – 7:00 AM · Every day</p>
+</div>
+<label class="ios-switch shrink-0">
+<input checked="" type="checkbox"/>
+<span class="slider"></span>
+</label>
+</div>
+</div>
+</section>
+<!-- App Limits Section -->
+<section class="space-y-3">
+<div class="flex justify-between items-center px-1">
+<h2 class="font-title text-base font-bold text-text-primary">App limits</h2>
+<span class="font-caption text-caption text-text-tertiary">3 configured</span>
+</div>
+<div class="bg-surface rounded-2xl p-4 shadow-soft-card border border-border/40 divide-y divide-border/60">
+<!-- Instagram Row -->
+<div class="pb-3.5 space-y-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-[#833AB4] via-[#FD1D1D] to-[#FCB045] flex items-center justify-center text-white shadow-sm">
+<span class="material-symbols-outlined text-xl" data-icon="photo_camera" style="font-size: 20px;">photo_camera</span>
+</div>
+<div>
+<h4 class="font-title text-sm font-semibold text-text-primary">Instagram</h4>
+<span class="font-caption text-xs text-text-secondary">Social &amp; Media</span>
+</div>
+</div>
+<span class="font-caption text-caption font-semibold text-text-primary">22 of 30 min</span>
+</div>
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full rounded-full" style="width: 73.3%;"></div>
+</div>
+</div>
+<!-- TikTok Row -->
+<div class="py-3.5 space-y-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-xl bg-[#1E0C1F] flex items-center justify-center text-[#ffc23e] shadow-sm">
+<span class="material-symbols-outlined text-xl" data-icon="play_circle" style="font-size: 20px;">play_circle</span>
+</div>
+<div>
+<h4 class="font-title text-sm font-semibold text-text-primary">TikTok</h4>
+<span class="font-caption text-xs text-text-secondary">Short Video</span>
+</div>
+</div>
+<span class="font-caption text-caption font-semibold text-text-primary">9 of 15 min</span>
+</div>
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full rounded-full" style="width: 60%;"></div>
+</div>
+</div>
+<!-- YouTube Row -->
+<div class="pt-3.5 space-y-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-xl bg-error flex items-center justify-center text-white shadow-sm">
+<span class="material-symbols-outlined text-xl" data-icon="subscriptions" style="font-size: 20px;">subscriptions</span>
+</div>
+<div>
+<h4 class="font-title text-sm font-semibold text-text-primary">YouTube</h4>
+<span class="font-caption text-xs text-text-secondary">Entertainment</span>
+</div>
+</div>
+<span class="font-caption text-caption font-semibold text-text-primary">31 of 45 min</span>
+</div>
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full rounded-full" style="width: 68.8%;"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Strict Mode Section -->
+<section class="pb-2">
+<div class="bg-surface rounded-2xl p-4 shadow-soft-card border border-border/40 flex items-center justify-between">
+<div class="flex items-center gap-3.5">
+<div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center text-primary-container shrink-0">
+<span class="material-symbols-outlined" data-icon="lock">lock</span>
+</div>
+<div>
+<h3 class="font-title text-base font-semibold text-text-primary leading-snug">Strict mode</h3>
+<p class="font-caption text-caption text-text-secondary">Blocks cannot be turned off early</p>
+</div>
+</div>
+<label class="ios-switch shrink-0 ml-2">
+<input checked="" type="checkbox"/>
+<span class="slider"></span>
+</label>
+</div>
+</section>
+</main>
+<!-- BottomNavBar matching Shared Components JSON specification -->
+<nav class="fixed bottom-0 left-0 right-0 max-w-[393px] mx-auto z-50 flex justify-around items-center px-4 pb-8 pt-2 bg-surface shadow-subtle-tab">
+<!-- Tab 1: Today -->
+<button class="flex flex-col items-center justify-center text-text-tertiary hover:text-primary dark:hover:text-inverse-primary transition-colors active:scale-95 duration-150">
+<span class="material-symbols-outlined text-[24px]" data-icon="check_circle">check_circle</span>
+<span class="font-caption text-caption mt-0.5">Today</span>
+</button>
+<!-- Tab 2: Focus -->
+<button class="flex flex-col items-center justify-center text-text-tertiary hover:text-primary dark:hover:text-inverse-primary transition-colors active:scale-95 duration-150">
+<span class="material-symbols-outlined text-[24px]" data-icon="timer">timer</span>
+<span class="font-caption text-caption mt-0.5">Focus</span>
+</button>
+<!-- Tab 3: Blocks (ACTIVE TAB) -->
+<button class="flex flex-col items-center justify-center text-primary-container dark:text-inverse-primary font-semibold relative after:content-[''] after:w-1 after:h-1 after:bg-secondary-container after:rounded-full after:mt-1 active:scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined text-[24px]" data-icon="shield">shield</span>
+<span class="font-caption text-caption mt-0.5">Blocks</span>
+</button>
+<!-- Tab 4: Insights -->
+<button class="flex flex-col items-center justify-center text-text-tertiary hover:text-primary dark:hover:text-inverse-primary transition-colors active:scale-95 duration-150">
+<span class="material-symbols-outlined text-[24px]" data-icon="bar_chart">bar_chart</span>
+<span class="font-caption text-caption mt-0.5">Insights</span>
+</button>
+<!-- Tab 5: Profile -->
+<button class="flex flex-col items-center justify-center text-text-tertiary hover:text-primary dark:hover:text-inverse-primary transition-colors active:scale-95 duration-150">
+<span class="material-symbols-outlined text-[24px]" data-icon="person">person</span>
+<span class="font-caption text-caption mt-0.5">Profile</span>
+</button>
+</nav>
+</div>
+</body></html>

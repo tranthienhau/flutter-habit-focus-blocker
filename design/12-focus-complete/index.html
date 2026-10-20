@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Session Summary</title>
+<!-- Google Fonts: Gloock & Lato -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Gloock&amp;family=Lato:ital,wght@0,300;0,400;0,600;0,700;0,900;1,400&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "inverse-surface": "#352f33",
+            "on-secondary-fixed": "#261900",
+            "tertiary-fixed": "#dbe9a5",
+            "outline-variant": "#d2c2cd",
+            "secondary-container": "#ffc23e",
+            "outline": "#80737d",
+            "surface-dim": "#e2d7dd",
+            "secondary-fixed": "#ffdea4",
+            "on-tertiary": "#ffffff",
+            "error-container": "#ffdad6",
+            "accent-pressed": "#3F1240",
+            "text-primary": "#1E0C1F",
+            "primary-container": "#4a154b",
+            "inverse-on-surface": "#f9eef3",
+            "surface-tint": "#844981",
+            "primary-fixed-dim": "#f6afef",
+            "on-secondary": "#ffffff",
+            "border": "#EADCEA",
+            "on-tertiary-container": "#8c995d",
+            "secondary-fixed-dim": "#f8bd39",
+            "surface-container-high": "#f0e5eb",
+            "danger": "#DC2626",
+            "error": "#ba1a1a",
+            "tertiary-container": "#263000",
+            "inverse-primary": "#f6afef",
+            "tertiary": "#141a00",
+            "on-tertiary-fixed-variant": "#404b17",
+            "surface-variant": "#eae0e5",
+            "primary": "#300033",
+            "surface-container": "#f6ebf0",
+            "success": "#16A34A",
+            "surface-container-lowest": "#ffffff",
+            "surface-alt": "#F7EEF7",
+            "on-primary-container": "#be7db9",
+            "on-error": "#ffffff",
+            "on-background": "#1f1a1e",
+            "on-error-container": "#93000a",
+            "surface-container-low": "#fcf1f6",
+            "on-primary-fixed": "#370139",
+            "text-tertiary": "#8F7D90",
+            "text-secondary": "#5E4A5F",
+            "on-primary": "#ffffff",
+            "accent-tint": "#E6DEE6",
+            "tertiary-fixed-dim": "#bfcd8b",
+            "on-secondary-fixed-variant": "#5d4200",
+            "primary-fixed": "#ffd6f8",
+            "on-surface-variant": "#4f434c",
+            "on-secondary-container": "#705100",
+            "on-surface": "#1f1a1e",
+            "surface-container-highest": "#eae0e5",
+            "on-tertiary-fixed": "#171e00",
+            "surface-bright": "#fff7fa",
+            "background": "#FCF4FC",
+            "secondary": "#7b5900",
+            "warning": "#D97706",
+            "surface": "#FFFFFF",
+            "on-primary-fixed-variant": "#693168"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "2xl": "1.25rem",
+            "3xl": "1.5rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin": "20px",
+            "space-sm": "8px",
+            "space-xs": "4px",
+            "space-2xl": "32px",
+            "space-md": "12px",
+            "space-xl": "24px",
+            "space-lg": "16px",
+            "gutter": "16px"
+          },
+          "fontFamily": {
+            "caption": ["Lato", "sans-serif"],
+            "label": ["Lato", "sans-serif"],
+            "display": ["Gloock", "serif"],
+            "title": ["Lato", "sans-serif"],
+            "body": ["Lato", "sans-serif"]
+          },
+          "fontSize": {
+            "caption": [
+              "13px",
+              {
+                "lineHeight": "16px",
+                "fontWeight": "500"
+              }
+            ],
+            "label": [
+              "14px",
+              {
+                "lineHeight": "18px",
+                "fontWeight": "500"
+              }
+            ],
+            "display": [
+              "32px",
+              {
+                "lineHeight": "38px",
+                "letterSpacing": "-0.02em",
+                "fontWeight": "700"
+              }
+            ],
+            "title": [
+              "20px",
+              {
+                "lineHeight": "26px",
+                "fontWeight": "600"
+              }
+            ],
+            "body": [
+              "16px",
+              {
+                "lineHeight": "22px",
+                "fontWeight": "400"
+              }
+            ]
+          },
+          "boxShadow": {
+            "ambient": "0 1px 2px rgba(30, 12, 31, 0.04), 0 8px 24px rgba(30, 12, 31, 0.06)",
+            "subtle": "0 2px 8px rgba(30, 12, 31, 0.04)"
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      font-size: 22px;
+      line-height: 1;
+      display: inline-block;
+      user-select: none;
+    }
+    .material-symbols-outlined.filled {
+      font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    /* iOS smooth tap feedback */
+    button, [role="button"] {
+      -webkit-tap-highlight-color: transparent;
+    }
+  </style>
+</head>
+<body class="bg-background text-text-primary font-body antialiased selection:bg-primary-container selection:text-white flex justify-center min-h-screen">
+<!-- Mobile Viewport Container (393px iPhone 15 frame) -->
+<div class="relative w-full max-w-[393px] min-h-screen bg-background flex flex-col justify-between overflow-x-hidden shadow-2xl">
+<!-- Top Area: iOS Status Bar + Shared Component TopAppBar -->
+<header class="w-full flex flex-col">
+<!-- iOS Status Bar -->
+<div class="w-full pt-3 px-margin flex items-center justify-between text-text-primary select-none z-20">
+<span class="font-body font-semibold text-[15px] tracking-tight text-text-primary">9:41</span>
+<div class="flex items-center space-x-1.5 text-text-primary">
+<!-- Signal Icon -->
+<svg class="w-4 h-3.5 fill-current" viewbox="0 0 17 12">
+<path d="M1 9.5h2.2v2.5H1v-2.5zm4.2-3h2.2v5.5H5.2V6.5zm4.2-3.2h2.2v8.7H9.4V3.3zM13.6 0h2.2v12h-2.2V0z"></path>
+</svg>
+<!-- Wifi Icon -->
+<svg class="w-4 h-3.5 fill-current" viewbox="0 0 16 12">
+<path d="M8 2.4c2.8 0 5.4 1.1 7.3 2.9l-1.3 1.4C12.4 5.2 10.3 4.3 8 4.3c-2.3 0-4.4.9-6 2.4L.7 5.3C2.6 3.5 5.2 2.4 8 2.4zm0 3.8c1.8 0 3.4.7 4.6 1.9l-1.3 1.4C10.4 8.7 9.3 8.1 8 8.1c-1.3 0-2.4.6-3.3 1.4L3.4 8.1C4.6 6.9 6.2 6.2 8 6.2zm0 3.8c.8 0 1.5.3 2 .9L8 13.1 5.9 10.9c.5-.6 1.2-.9 2.1-.9z"></path>
+</svg>
+<!-- Battery Icon -->
+<div class="flex items-center">
+<div class="w-5 h-2.5 rounded-[4px] border border-text-primary p-0.5 flex items-center">
+<div class="w-full h-full bg-text-primary rounded-[1.5px]"></div>
+</div>
+<div class="w-0.5 h-1 bg-text-primary rounded-r-[1px] ml-[0.5px]"></div>
+</div>
+</div>
+</div>
+<!-- Shared Component: TopAppBar (type: small_center_aligned) -->
+<!-- style_shell_layout: flex justify-between items-center w-full px-margin pt-12 pb-space-sm max-w-[393px] mx-auto -->
+<!-- style_bg_color: bg-background dark:bg-inverse-surface -->
+<!-- style_primary_color: text-primary dark:text-inverse-primary -->
+<!-- style_typography: Headlines: text-title font-title. Labels: text-label font-label -->
+<!-- style_brand_logo: text-title font-title font-bold text-text-primary dark:text-inverse-on-surface -->
+<!-- style_shadows_and_elevation: flat no shadows -->
+<!-- style_separation_logic: bg-background dark:bg-inverse-surface -->
+<nav class="bg-background dark:bg-inverse-surface text-primary dark:text-inverse-primary flex justify-between items-center w-full px-margin pt-3 pb-space-sm max-w-[393px] mx-auto select-none">
+<!-- Leading Action: Close -->
+<button aria-label="Close" class="w-10 h-10 rounded-full flex items-center justify-center text-text-primary hover:bg-surface-alt dark:hover:bg-primary-container active:scale-95 transition-all duration-150 focus:outline-none" type="button">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+<!-- Headline -->
+<h1 class="text-title font-title font-bold text-text-primary dark:text-inverse-on-surface tracking-tight">Session Summary</h1>
+<!-- Trailing Action: Share -->
+<button aria-label="Share" class="w-10 h-10 rounded-full flex items-center justify-center text-text-primary hover:bg-surface-alt dark:hover:bg-primary-container active:scale-95 transition-all duration-150 focus:outline-none" type="button">
+<span class="material-symbols-outlined" data-icon="share">share</span>
+</button>
+</nav>
+</header>
+<!-- Main Scrollable Flow -->
+<main class="flex-1 px-margin pt-1 pb-4 flex flex-col space-y-5">
+<!-- Hero Photography Card -->
+<section class="relative w-full h-[180px] rounded-2xl overflow-hidden shadow-ambient bg-surface-alt border border-border">
+<img alt="Sunlit wooden desk with a closed minimalist laptop, thriving potted green plant, and ceramic coffee cup" class="w-full h-full object-cover object-center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7IxdZtr0UuEwBb32JSf8H5WkB3P5m86AbCpMWDEwwCVXgrpTjAsSD72tyCI-11K69n6iSBU0y6EW-IUPLlM5iEUfZdYdjDrxlecgr5dlWc9hS0ePmoT3M2ssN65a4FUSaWBArChiSTFBIsbd6_C1rqQe5xJQ4IeUuy6jo0vgs6_rIitKt62f6JIWaHZWL8Si3Gc2HReNI0EKjRXJKcT9kxDX6o1vPbOLdK-wUnnt6J7ZQT4KRftPqb4M_eH3hj2q4uuUiNOKF1Mk"/>
+<!-- Subtle warm ambient gold gradient scrim -->
+<div class="absolute inset-0 bg-gradient-to-t from-primary/30 via-transparent to-transparent pointer-events-none"></div>
+</section>
+<!-- Focal Section: Headline & Big Duration Display -->
+<section class="text-center pt-1 pb-1">
+<h2 class="font-display text-display text-text-primary leading-tight">Session complete</h2>
+<div class="mt-2 flex flex-col items-center justify-center">
+<span class="font-display text-[52px] leading-[54px] font-bold text-primary-container tracking-tight">50 min</span>
+<p class="font-label text-label text-text-secondary mt-1">focused on <span class="font-semibold text-text-primary">Deep work</span></p>
+</div>
+</section>
+<!-- Stat Cards: 3 Bento/Card Row -->
+<section class="grid grid-cols-3 gap-2.5">
+<!-- Card 1: Shield / Blocked -->
+<div class="bg-surface border border-border rounded-2xl p-3 flex flex-col items-center text-center shadow-ambient hover:border-outline-variant transition-colors">
+<div class="w-8 h-8 rounded-full bg-surface-alt flex items-center justify-center mb-1.5 text-primary-container">
+<span class="material-symbols-outlined text-[19px]" data-icon="shield">shield</span>
+</div>
+<span class="font-title text-[17px] font-bold text-text-primary leading-tight">3</span>
+<span class="font-caption text-[11px] leading-[13px] text-text-secondary mt-0.5 font-medium">blocked<br/>attempts</span>
+</div>
+<!-- Card 2: Flame / Streak -->
+<div class="bg-surface border border-border rounded-2xl p-3 flex flex-col items-center text-center shadow-ambient hover:border-outline-variant transition-colors">
+<div class="w-8 h-8 rounded-full bg-[#FFF9EC] flex items-center justify-center mb-1.5 text-[#ECB22E]">
+<span class="material-symbols-outlined text-[20px]" data-icon="local_fire_department" data-weight="fill" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+</div>
+<span class="font-title text-[17px] font-bold text-text-primary leading-tight">12 day</span>
+<span class="font-caption text-[11px] leading-[13px] text-text-secondary mt-0.5 font-medium">focus<br/>streak</span>
+</div>
+<!-- Card 3: Clock / Today -->
+<div class="bg-surface border border-border rounded-2xl p-3 flex flex-col items-center text-center shadow-ambient hover:border-outline-variant transition-colors">
+<div class="w-8 h-8 rounded-full bg-surface-alt flex items-center justify-center mb-1.5 text-primary-container">
+<span class="material-symbols-outlined text-[19px]" data-icon="schedule">schedule</span>
+</div>
+<span class="font-title text-[17px] font-bold text-text-primary leading-tight">1h 40m</span>
+<span class="font-caption text-[11px] leading-[13px] text-text-secondary mt-0.5 font-medium">focused<br/>today</span>
+</div>
+</section>
+<!-- Reflection Section: How was your focus? -->
+<section class="bg-surface border border-border rounded-2xl p-4 shadow-ambient flex flex-col items-center space-y-3">
+<span class="font-title text-body font-semibold text-text-primary tracking-tight">How was your focus?</span>
+<!-- 5 Interactive/Rating Circles -->
+<div aria-label="Focus rating" class="flex items-center justify-between w-full max-w-[270px] px-1" id="rating-group" role="radiogroup">
+<!-- 1 -->
+<button aria-checked="false" aria-label="Rating 1" class="w-10 h-10 rounded-full border border-border bg-surface text-text-secondary font-title font-semibold text-[15px] flex items-center justify-center hover:bg-surface-alt active:scale-95 transition-all" role="radio" type="button">
+            1
+          </button>
+<!-- 2 -->
+<button aria-checked="false" aria-label="Rating 2" class="w-10 h-10 rounded-full border border-border bg-surface text-text-secondary font-title font-semibold text-[15px] flex items-center justify-center hover:bg-surface-alt active:scale-95 transition-all" role="radio" type="button">
+            2
+          </button>
+<!-- 3 -->
+<button aria-checked="false" aria-label="Rating 3" class="w-10 h-10 rounded-full border border-border bg-surface text-text-secondary font-title font-semibold text-[15px] flex items-center justify-center hover:bg-surface-alt active:scale-95 transition-all" role="radio" type="button">
+            3
+          </button>
+<!-- 4: Selected State -->
+<button aria-checked="true" aria-label="Rating 4" class="w-10 h-10 rounded-full bg-primary-container text-white font-title font-semibold text-[15px] flex items-center justify-center shadow-subtle ring-2 ring-primary-container/20 active:scale-95 transition-all" role="radio" type="button">
+            4
+          </button>
+<!-- 5 -->
+<button aria-checked="false" aria-label="Rating 5" class="w-10 h-10 rounded-full border border-border bg-surface text-text-secondary font-title font-semibold text-[15px] flex items-center justify-center hover:bg-surface-alt active:scale-95 transition-all" role="radio" type="button">
+            5
+          </button>
+</div>
+<div class="flex justify-between w-full max-w-[270px] px-1 text-text-tertiary font-caption text-[11px]">
+<span>Distracted</span>
+<span>Flow state</span>
+</div>
+</section>
+</main>
+<!-- Bottom Actions & iOS Home Indicator -->
+<footer class="w-full px-margin pt-2 pb-6 flex flex-col space-y-2.5">
+<!-- Primary Action: Done -->
+<button class="w-full h-13 py-3.5 px-6 rounded-full bg-primary-container hover:bg-accent-pressed active:scale-[0.98] transition-all duration-150 flex items-center justify-center shadow-ambient" type="button">
+<span class="font-label text-body font-semibold text-white tracking-wide">Done</span>
+</button>
+<!-- Secondary Action: Take a 5 min break -->
+<button class="w-full h-13 py-3.5 px-6 rounded-full bg-surface border-[1.5px] border-primary-container hover:bg-surface-alt active:scale-[0.98] transition-all duration-150 flex items-center justify-center" type="button">
+<span class="font-label text-body font-semibold text-primary-container">Take a 5 min break</span>
+</button>
+<!-- iOS Home Indicator -->
+<div class="w-full pt-3 flex justify-center">
+<div class="w-32 h-1 bg-text-primary/20 rounded-full"></div>
+</div>
+</footer>
+</div>
+<!-- Inline Micro-interaction Script for Rating Selection -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const ratingGroup = document.getElementById('rating-group');
+      if (!ratingGroup) return;
+
+      const buttons = ratingGroup.querySelectorAll('button[role="radio"]');
+
+      buttons.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          buttons.forEach((b) => {
+            b.setAttribute('aria-checked', 'false');
+            b.className = 'w-10 h-10 rounded-full border border-border bg-surface text-text-secondary font-title font-semibold text-[15px] flex items-center justify-center hover:bg-surface-alt active:scale-95 transition-all';
+          });
+          btn.setAttribute('aria-checked', 'true');
+          btn.className = 'w-10 h-10 rounded-full bg-primary-container text-white font-title font-semibold text-[15px] flex items-center justify-center shadow-subtle ring-2 ring-primary-container/20 active:scale-95 transition-all';
+        });
+      });
+    });
+  </script>
+</body></html>
